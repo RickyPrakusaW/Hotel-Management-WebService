@@ -9,7 +9,7 @@ Semua request menggunakan header `Content-Type: application/json`.
 ## 1. Register User Baru
 * **Method**: `POST`
 * **URL**: `{{BASE_URL}}/api/v1/auth/register` (contoh: `http://localhost:3000/api/v1/auth/register`)
-* **Deskripsi**: Mendaftarkan pengguna baru dengan status awal belum terverifikasi (`isVerified: false`). Sistem akan otomatis men-generate kode OTP 6 digit dan mengirimkannya ke email pendaftar via Gmail SMTP. **OTP berlaku selama 1 menit**.
+* **Deskripsi**: Mendaftarkan pengguna baru dengan status awal belum terverifikasi (`isVerified: false`). Sistem akan otomatis men-generate kode OTP 6 digit dan mengirimkannya ke email pendaftar via Gmail SMTP. **OTP berlaku selama 2 menit**.
 
 ### Request Body (JSON)
 ```json
@@ -17,6 +17,7 @@ Semua request menggunakan header `Content-Type: application/json`.
   "name": "Budi Santoso",
   "email": "budi@example.com",
   "password": "Password123!",
+  "phone": "08123456789",
   "role": "Customer"
 }
 ```
@@ -87,12 +88,13 @@ Semua request menggunakan header `Content-Type: application/json`.
 ## 3. Kirim Ulang OTP (Resend OTP)
 * **Method**: `POST`
 * **URL**: `{{BASE_URL}}/api/v1/auth/resend-otp`
-* **Deskripsi**: Men-generate ulang kode OTP baru yang **berlaku selama 1 menit** dan mengirimkannya kembali ke email pengguna.
+* **Deskripsi**: Men-generate ulang kode OTP baru yang **berlaku selama 2 menit** dan mengirimkannya kembali ke email pengguna. Pengguna tidak bisa melakukan spam permintaan kirim ulang sebelum masa berlaku OTP sebelumnya habis (respons 429 Too Many Requests).
 
 ### Request Body (JSON)
 ```json
 {
-  "email": "budi@example.com"
+  "email": "budi@example.com",
+  "password": "Password123!"
 }
 ```
 
@@ -106,6 +108,24 @@ Semua request menggunakan header `Content-Type: application/json`.
     "isVerified": false,
     "otpExpiresAt": "2026-07-08T14:05:40.456Z"
   }
+}
+```
+
+### Response Gagal - Password Salah (401 Unauthorized)
+```json
+{
+  "success": false,
+  "message": "Password salah",
+  "data": null
+}
+```
+
+### Response Gagal - Spam Resend (429 Too Many Requests)
+```json
+{
+  "success": false,
+  "message": "Silakan tunggu 112 detik lagi sebelum meminta OTP baru",
+  "data": null
 }
 ```
 

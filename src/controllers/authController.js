@@ -2,18 +2,17 @@ const { User } = require("../models");
 const jwt = require("jsonwebtoken");
 const emailService = require("../services/emailService");
 
-// Menggunakan hardcode JWT_SECRET karena ini project kuliah dan diminta mudah dipahami
 const JWT_SECRET = process.env.JWT_SECRET || "supersecretkey";
 
 exports.register = async (req, res) => {
   try {
     const { name, email, password, role, phone } = req.body;
 
-    // 1. Validasi manual (sederhana & mudah dipahami)
-    if (!name || !email || !password) {
+    // 1. Validasi manual
+    if (!name || !email || !password || !phone) {
       return res.status(400).json({
         success: false,
-        message: "Semua field wajib diisi (name, email, password)",
+        message: "Semua field wajib diisi (name, email, password, phone)",
         data: null,
       });
     }
@@ -30,7 +29,7 @@ exports.register = async (req, res) => {
 
     // 3. Buat 6 digit OTP acak
     const otpCode = Math.floor(100000 + Math.random() * 900000).toString();
-    const otpExpiresAt = new Date(Date.now() + 1 * 60 * 1000); // berlaku 1 menit
+    const otpExpiresAt = new Date(Date.now() + 2 * 60 * 1000); // berlaku 2 menit
 
     // 4. Simpan ke database (password di-hash otomatis oleh pre-save hook di User model)
     const newUser = await User.create({
@@ -129,7 +128,7 @@ exports.login = async (req, res) => {
         role: user.role,
       },
       JWT_SECRET,
-      { expiresIn: "1d" },
+      { expiresIn: "1d" }, // 2h, 10m
     );
 
     return res.status(200).json({
@@ -231,21 +230,31 @@ exports.verifyOTP = async (req, res) => {
 
 exports.resendOTP = async (req, res) => {
   try {
-    const { email } = req.body;
+    const { email, password } = req.body;
 
-    if (!email) {
+    if (!email || !password) {
       return res.status(400).json({
         success: false,
-        message: "Email wajib diisi",
+        message: "Email dan password wajib diisi",
         data: null,
       });
     }
 
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email }).select("+password");
     if (!user) {
       return res.status(404).json({
         success: false,
         message: "User tidak ditemukan",
+        data: null,
+      });
+    }
+
+    // Verifikasi password untuk keamanan pengiriman ulang OTP
+    const isPasswordValid = await user.comparePassword(password);
+    if (!isPasswordValid) {
+      return res.status(401).json({
+        success: false,
+        message: "Password salah",
         data: null,
       });
     }
@@ -258,9 +267,20 @@ exports.resendOTP = async (req, res) => {
       });
     }
 
+    // Mencegah spam resend OTP sebelum waktunya habis
+    if (user.otpExpiresAt && user.otpExpiresAt > new Date()) {
+      const timeLeftMs = user.otpExpiresAt - new Date();
+      const timeLeftSec = Math.ceil(timeLeftMs / 1000);
+      return res.status(429).json({
+        success: false,
+        message: `Silakan tunggu ${timeLeftSec} detik lagi sebelum meminta OTP baru`,
+        data: null,
+      });
+    }
+
     // Buat OTP baru
     const otpCode = Math.floor(100000 + Math.random() * 900000).toString();
-    const otpExpiresAt = new Date(Date.now() + 1 * 60 * 1000); // 1 menit
+    const otpExpiresAt = new Date(Date.now() + 2 * 60 * 1000); // 2 menit
 
     user.otpCode = otpCode;
     user.otpExpiresAt = otpExpiresAt;

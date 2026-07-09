@@ -27,12 +27,13 @@ const registerSchema = Joi.object({
     .pattern(/^[0-9]+$/)
     .min(10)
     .max(15)
-    .optional()
-    .allow(null, "")
+    .required()
     .messages({
+      "string.empty": "Nomor telepon tidak boleh kosong",
       "string.pattern.base": "Nomor telepon harus berupa angka",
       "string.min": "Nomor telepon minimal 10 digit",
       "string.max": "Nomor telepon maksimal 15 digit",
+      "any.required": "Nomor telepon wajib diisi",
     }),
 });
 
