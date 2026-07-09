@@ -7,6 +7,7 @@ const categoryRoutes = require("./categoryRoutes");
 const voucherRoutes = require("./voucherRoutes");
 const hotelRoutes = require("./hotelRoutes");
 const bookingRoutes = require("./bookingRoutes");
+const weatherRoutes = require("./weatherRoutes");
 const bookingController = require("../controllers/bookingController");
 const authMiddleware = require("../middlewares/authMiddleware");
 
@@ -23,6 +24,9 @@ router.use("/categories", categoryRoutes);
 router.use("/vouchers", voucherRoutes);
 router.use("/hotels", hotelRoutes);
 router.use("/bookings", bookingRoutes);
+
+// Jalur Informasi Cuaca (OpenWeatherMap API)
+router.use("/weather", weatherRoutes);
 
 // Jalur Health Check
 router.get("/health", bookingController.healthCheck);

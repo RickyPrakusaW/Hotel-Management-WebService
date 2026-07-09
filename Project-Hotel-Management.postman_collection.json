@@ -13,46 +13,60 @@
       "item": [
         {
           "name": "1.1 Register",
-          "item": [
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "name",
+                  "value": "Ricky prakusa",
+                  "type": "text",
+                  "description": "(Wajib) Nama lengkap pengguna"
+                },
+                {
+                  "key": "email",
+                  "value": "rickyprakusa281@gmail.com",
+                  "type": "text",
+                  "description": "(Wajib) Email aktif terdaftar"
+                },
+                {
+                  "key": "password",
+                  "value": "Password123!",
+                  "type": "text",
+                  "description": "(Wajib) Kata sandi akun"
+                },
+                {
+                  "key": "role",
+                  "value": "Customer",
+                  "type": "text",
+                  "description": "(Opsional) Peran akun (Customer, HotelManager, Admin)"
+                },
+                {
+                  "key": "phone",
+                  "value": "08123456789",
+                  "type": "text",
+                  "description": "(Wajib) Nomor telepon aktif"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/auth/register",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "auth", "register"]
+            },
+            "description": "Mendaftarkan pengguna baru ke sistem."
+          },
+          "response": [
             {
-              "name": "1.1.1 Register - Sukses",
-              "request": {
+              "name": "Berhasil Register",
+              "originalRequest": {
                 "method": "POST",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "name",
-                      "value": "Ricky prakusa",
-                      "type": "text",
-                      "description": "(Wajib) Nama lengkap pengguna"
-                    },
-                    {
-                      "key": "email",
-                      "value": "rickyprakusa281@gmail.com",
-                      "type": "text",
-                      "description": "(Wajib) Email aktif/terdaftar"
-                    },
-                    {
-                      "key": "password",
-                      "value": "Password123!",
-                      "type": "text",
-                      "description": "(Wajib) Kata sandi akun"
-                    },
-                    {
-                      "key": "role",
-                      "value": "Customer",
-                      "type": "text",
-                      "description": "(Opsional) Peran akun (Customer, HotelManager, Admin)"
-                    },
-                    {
-                      "key": "phone",
-                      "value": "08123456789",
-                      "type": "text",
-                      "description": "(Wajib) Nomor telepon aktif"
-                    }
-                  ]
+                  "urlencoded": []
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/register",
@@ -60,47 +74,26 @@
                   "path": ["api", "v1", "auth", "register"]
                 }
               },
-              "response": []
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Registrasi berhasil, silakan verifikasi OTP Anda\",\n  \"data\": {\n    \"userId\": \"6a4e79f7d269611e25699002\",\n    \"email\": \"rickyprakusa281@gmail.com\",\n    \"otpExpiresAt\": \"2026-07-10T02:00:00.000Z\"\n  }\n}"
             },
             {
-              "name": "1.1.2  Role salah - Error",
-              "request": {
+              "name": "Gagal Register - Role salah",
+              "originalRequest": {
                 "method": "POST",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "name",
-                      "value": "Ricky prakusa",
-                      "type": "text",
-                      "description": "(Wajib) Nama lengkap pengguna"
-                    },
-                    {
-                      "key": "email",
-                      "value": "rickyprakusa281@gmail.com",
-                      "type": "text",
-                      "description": "(Wajib) Email aktif/terdaftar"
-                    },
-                    {
-                      "key": "password",
-                      "value": "Password123!",
-                      "type": "text",
-                      "description": "(Wajib) Kata sandi akun"
-                    },
-                    {
-                      "key": "role",
-                      "value": "Penjual",
-                      "type": "text",
-                      "description": "(Opsional) Peran akun (Customer, HotelManager, Admin)"
-                    },
-                    {
-                      "key": "phone",
-                      "value": "08123456789",
-                      "type": "text",
-                      "description": "(Wajib) Nomor telepon aktif"
-                    }
-                  ]
+                  "urlencoded": []
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/register",
@@ -108,47 +101,26 @@
                   "path": ["api", "v1", "auth", "register"]
                 }
               },
-              "response": []
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"\\\"role\\\" must be one of [Admin, HotelManager, Customer]\",\n  \"data\": null\n}"
             },
             {
-              "name": "1.1.3 Email Kembar - Error",
-              "request": {
+              "name": "Gagal Register - Email Kembar",
+              "originalRequest": {
                 "method": "POST",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "name",
-                      "value": "Ricky prakusa",
-                      "type": "text",
-                      "description": "(Wajib) Nama lengkap pengguna"
-                    },
-                    {
-                      "key": "email",
-                      "value": "rickyprakusa281@gmail.com",
-                      "type": "text",
-                      "description": "(Wajib) Email aktif/terdaftar"
-                    },
-                    {
-                      "key": "password",
-                      "value": "Password123!",
-                      "type": "text",
-                      "description": "(Wajib) Kata sandi akun"
-                    },
-                    {
-                      "key": "role",
-                      "value": "Customer",
-                      "type": "text",
-                      "description": "(Opsional) Peran akun (Customer, HotelManager, Admin)"
-                    },
-                    {
-                      "key": "phone",
-                      "value": "08123456789",
-                      "type": "text",
-                      "description": "(Wajib) Nomor telepon aktif"
-                    }
-                  ]
+                  "urlencoded": []
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/register",
@@ -156,47 +128,26 @@
                   "path": ["api", "v1", "auth", "register"]
                 }
               },
-              "response": []
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"Email sudah terdaftar\",\n  \"data\": null\n}"
             },
             {
-              "name": "1.1.4 Data tidak lengkap - Error",
-              "request": {
+              "name": "Gagal Register - Data tidak lengkap",
+              "originalRequest": {
                 "method": "POST",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "name",
-                      "value": "",
-                      "type": "text",
-                      "description": "(Wajib) Nama lengkap pengguna"
-                    },
-                    {
-                      "key": "email",
-                      "value": "",
-                      "type": "text",
-                      "description": "(Wajib) Email aktif/terdaftar"
-                    },
-                    {
-                      "key": "password",
-                      "value": "",
-                      "type": "text",
-                      "description": "(Wajib) Kata sandi akun"
-                    },
-                    {
-                      "key": "role",
-                      "value": "",
-                      "type": "text",
-                      "description": "(Opsional) Peran akun (Customer, HotelManager, Admin)"
-                    },
-                    {
-                      "key": "phone",
-                      "value": "",
-                      "type": "text",
-                      "description": "(Wajib) Nomor telepon aktif"
-                    }
-                  ]
+                  "urlencoded": []
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/register",
@@ -204,47 +155,26 @@
                   "path": ["api", "v1", "auth", "register"]
                 }
               },
-              "response": []
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"\\\"name\\\" is not allowed to be empty\",\n  \"data\": null\n}"
             },
             {
-              "name": "1.1.5 Format email salah - Error",
-              "request": {
+              "name": "Gagal Register - Format email salah",
+              "originalRequest": {
                 "method": "POST",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "name",
-                      "value": "Ricky prakusa",
-                      "type": "text",
-                      "description": "(Wajib) Nama lengkap pengguna"
-                    },
-                    {
-                      "key": "email",
-                      "value": "rickyprakusa281",
-                      "type": "text",
-                      "description": "(Wajib) Email aktif/terdaftar"
-                    },
-                    {
-                      "key": "password",
-                      "value": "Password123!",
-                      "type": "text",
-                      "description": "(Wajib) Kata sandi akun"
-                    },
-                    {
-                      "key": "role",
-                      "value": "Customer",
-                      "type": "text",
-                      "description": "(Opsional) Peran akun (Customer, HotelManager, Admin)"
-                    },
-                    {
-                      "key": "phone",
-                      "value": "08123456789",
-                      "type": "text",
-                      "description": "(Wajib) Nomor telepon aktif"
-                    }
-                  ]
+                  "urlencoded": []
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/register",
@@ -252,47 +182,26 @@
                   "path": ["api", "v1", "auth", "register"]
                 }
               },
-              "response": []
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"\\\"email\\\" must be a valid email\",\n  \"data\": null\n}"
             },
             {
-              "name": "1.1.6 Nama minimal 2 karakter - Error",
-              "request": {
+              "name": "Gagal Register - Nama minimal 2 karakter",
+              "originalRequest": {
                 "method": "POST",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "name",
-                      "value": "R",
-                      "type": "text",
-                      "description": "(Wajib) Nama lengkap pengguna"
-                    },
-                    {
-                      "key": "email",
-                      "value": "rickyprakusa281@gmail.com",
-                      "type": "text",
-                      "description": "(Wajib) Email aktif/terdaftar"
-                    },
-                    {
-                      "key": "password",
-                      "value": "Password123!",
-                      "type": "text",
-                      "description": "(Wajib) Kata sandi akun"
-                    },
-                    {
-                      "key": "role",
-                      "value": "Customer",
-                      "type": "text",
-                      "description": "(Opsional) Peran akun (Customer, HotelManager, Admin)"
-                    },
-                    {
-                      "key": "phone",
-                      "value": "08123456789",
-                      "type": "text",
-                      "description": "(Wajib) Nomor telepon aktif"
-                    }
-                  ]
+                  "urlencoded": []
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/register",
@@ -300,37 +209,58 @@
                   "path": ["api", "v1", "auth", "register"]
                 }
               },
-              "response": []
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"\\\"name\\\" length must be at least 2 characters long\",\n  \"data\": null\n}"
             }
           ]
         },
         {
           "name": "1.2 Login",
-          "item": [
-            {
-              "name": "1.2.1 Belum terverifikasi OTP - Error",
-              "request": {
-                "auth": {
-                  "type": "noauth"
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "email",
+                  "value": "rickyprakusa281@gmail.com",
+                  "type": "text",
+                  "description": "(Wajib) Email terdaftar"
                 },
+                {
+                  "key": "password",
+                  "value": "Password123!",
+                  "type": "text",
+                  "description": "(Wajib) Kata sandi akun"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/auth/login",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "auth", "login"]
+            },
+            "description": "Melakukan otentikasi login pengguna dan mengembalikan token JWT."
+          },
+          "response": [
+            {
+              "name": "Berhasil Login",
+              "originalRequest": {
                 "method": "POST",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "email",
-                      "value": "rickyprakusa281@gmail.com",
-                      "type": "text",
-                      "description": "(Wajib) Email aktif/terdaftar"
-                    },
-                    {
-                      "key": "password",
-                      "value": "Password123!",
-                      "type": "text",
-                      "description": "(Wajib) Kata sandi akun"
-                    }
-                  ]
+                  "urlencoded": []
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/login",
@@ -338,32 +268,26 @@
                   "path": ["api", "v1", "auth", "login"]
                 }
               },
-              "response": []
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Login berhasil\",\n  \"data\": {\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\",\n    \"user\": {\n      \"id\": \"6a4e79f7d269611e25699002\",\n      \"name\": \"Ricky prakusa\",\n      \"email\": \"rickyprakusa281@gmail.com\",\n      \"role\": \"Customer\"\n    }\n  }\n}"
             },
             {
-              "name": "1.2.2 Email tidak terdaftar - Error",
-              "request": {
-                "auth": {
-                  "type": "noauth"
-                },
+              "name": "Gagal Login - Belum terverifikasi OTP",
+              "originalRequest": {
                 "method": "POST",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "email",
-                      "value": "rickyprakusa2@gmail.com",
-                      "type": "text",
-                      "description": "(Wajib) Email aktif/terdaftar"
-                    },
-                    {
-                      "key": "password",
-                      "value": "Password123!",
-                      "type": "text",
-                      "description": "(Wajib) Kata sandi akun"
-                    }
-                  ]
+                  "urlencoded": []
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/login",
@@ -371,32 +295,26 @@
                   "path": ["api", "v1", "auth", "login"]
                 }
               },
-              "response": []
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"Akun Anda belum diverifikasi. Silakan verifikasi OTP terlebih dahulu.\",\n  \"data\": null\n}"
             },
             {
-              "name": "1.2.3 Data tidak lengkap - Error",
-              "request": {
-                "auth": {
-                  "type": "noauth"
-                },
+              "name": "Gagal Login - Email tidak terdaftar",
+              "originalRequest": {
                 "method": "POST",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "email",
-                      "value": "",
-                      "type": "text",
-                      "description": "(Wajib) Email aktif/terdaftar"
-                    },
-                    {
-                      "key": "password",
-                      "value": "",
-                      "type": "text",
-                      "description": "(Wajib) Kata sandi akun"
-                    }
-                  ]
+                  "urlencoded": []
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/login",
@@ -404,32 +322,26 @@
                   "path": ["api", "v1", "auth", "login"]
                 }
               },
-              "response": []
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"Email atau password salah\",\n  \"data\": null\n}"
             },
             {
-              "name": "1.2.2 Email tidak terdaftar - Error Copy",
-              "request": {
-                "auth": {
-                  "type": "noauth"
-                },
+              "name": "Gagal Login - Data tidak lengkap",
+              "originalRequest": {
                 "method": "POST",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "email",
-                      "value": "rickyprakusa281@gmail.com",
-                      "type": "text",
-                      "description": "(Wajib) Email aktif/terdaftar"
-                    },
-                    {
-                      "key": "password",
-                      "value": "Password123=dg!",
-                      "type": "text",
-                      "description": "(Wajib) Kata sandi akun"
-                    }
-                  ]
+                  "urlencoded": []
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/login",
@@ -437,37 +349,85 @@
                   "path": ["api", "v1", "auth", "login"]
                 }
               },
-              "response": []
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"\\\"email\\\" is not allowed to be empty\",\n  \"data\": null\n}"
+            },
+            {
+              "name": "Gagal Login - Password salah",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": []
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/auth/login",
+                  "host": ["{{BASE_URL}}"],
+                  "path": ["api", "v1", "auth", "login"]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"Email atau password salah\",\n  \"data\": null\n}"
             }
           ]
         },
         {
-          "name": "1.3 Verifikasi Token",
-          "item": [
-            {
-              "name": "1.3.1 OTP salah - Error",
-              "request": {
-                "auth": {
-                  "type": "noauth"
+          "name": "1.3 Verifikasi Token OTP",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "email",
+                  "value": "rickyprakusa281@gmail.com",
+                  "type": "text",
+                  "description": "(Wajib) Email aktif"
                 },
+                {
+                  "key": "otpCode",
+                  "value": "123456",
+                  "type": "text",
+                  "description": "(Wajib) Kode OTP 6 digit"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/auth/verify-otp",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "auth", "verify-otp"]
+            },
+            "description": "Memverifikasi akun menggunakan kode OTP yang dikirim ke email."
+          },
+          "response": [
+            {
+              "name": "Berhasil Verifikasi OTP",
+              "originalRequest": {
                 "method": "POST",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "email",
-                      "value": "rickyprakusa281@gmail.com",
-                      "type": "text",
-                      "description": "(Wajib) Email aktif/terdaftar"
-                    },
-                    {
-                      "key": "otpCode",
-                      "value": "763080",
-                      "type": "text",
-                      "description": "(Wajib) Kode verifikasi OTP 6 digit"
-                    }
-                  ]
+                  "urlencoded": []
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/verify-otp",
@@ -475,32 +435,26 @@
                   "path": ["api", "v1", "auth", "verify-otp"]
                 }
               },
-              "response": []
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Akun berhasil diverifikasi\",\n  \"data\": null\n}"
             },
             {
-              "name": "1.3.2 OTP kedaluwarsa - Error",
-              "request": {
-                "auth": {
-                  "type": "noauth"
-                },
+              "name": "Gagal Verifikasi - OTP salah",
+              "originalRequest": {
                 "method": "POST",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "email",
-                      "value": "rickyprakusa281@gmail.com",
-                      "type": "text",
-                      "description": "(Wajib) Email aktif/terdaftar"
-                    },
-                    {
-                      "key": "otpCode",
-                      "value": "397229",
-                      "type": "text",
-                      "description": "(Wajib) Kode verifikasi OTP 6 digit"
-                    }
-                  ]
+                  "urlencoded": []
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/verify-otp",
@@ -508,32 +462,26 @@
                   "path": ["api", "v1", "auth", "verify-otp"]
                 }
               },
-              "response": []
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"Kode OTP salah atau tidak cocok\",\n  \"data\": null\n}"
             },
             {
-              "name": "1.3.3 Email Tidak terdaftar - Error",
-              "request": {
-                "auth": {
-                  "type": "noauth"
-                },
+              "name": "Gagal Verifikasi - OTP kedaluwarsa",
+              "originalRequest": {
                 "method": "POST",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "email",
-                      "value": "rickyprakusa28@gmail.com",
-                      "type": "text",
-                      "description": "(Wajib) Email aktif/terdaftar"
-                    },
-                    {
-                      "key": "otpCode",
-                      "value": "763080",
-                      "type": "text",
-                      "description": "(Wajib) Kode verifikasi OTP 6 digit"
-                    }
-                  ]
+                  "urlencoded": []
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/verify-otp",
@@ -541,32 +489,26 @@
                   "path": ["api", "v1", "auth", "verify-otp"]
                 }
               },
-              "response": []
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"Kode OTP telah kadaluarsa\",\n  \"data\": null\n}"
             },
             {
-              "name": "1.3.4 Data tidak lengkap - Error",
-              "request": {
-                "auth": {
-                  "type": "noauth"
-                },
+              "name": "Gagal Verifikasi - Email tidak terdaftar",
+              "originalRequest": {
                 "method": "POST",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "email",
-                      "value": "",
-                      "type": "text",
-                      "description": "(Wajib) Email aktif/terdaftar"
-                    },
-                    {
-                      "key": "otpCode",
-                      "value": "",
-                      "type": "text",
-                      "description": "(Wajib) Kode verifikasi OTP 6 digit"
-                    }
-                  ]
+                  "urlencoded": []
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/verify-otp",
@@ -574,32 +516,26 @@
                   "path": ["api", "v1", "auth", "verify-otp"]
                 }
               },
-              "response": []
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"User tidak ditemukan\",\n  \"data\": null\n}"
             },
             {
-              "name": "1.3.5 OTP benar - Sukses",
-              "request": {
-                "auth": {
-                  "type": "noauth"
-                },
+              "name": "Gagal Verifikasi - Data tidak lengkap",
+              "originalRequest": {
                 "method": "POST",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "email",
-                      "value": "rickyprakusa281@gmail.com",
-                      "type": "text",
-                      "description": "(Wajib) Email aktif/terdaftar"
-                    },
-                    {
-                      "key": "otpCode",
-                      "value": "888319",
-                      "type": "text",
-                      "description": "(Wajib) Kode verifikasi OTP 6 digit"
-                    }
-                  ]
+                  "urlencoded": []
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/verify-otp",
@@ -607,37 +543,58 @@
                   "path": ["api", "v1", "auth", "verify-otp"]
                 }
               },
-              "response": []
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"\\\"otpCode\\\" is required\",\n  \"data\": null\n}"
             }
           ]
         },
         {
           "name": "1.4 Resend OTP",
-          "item": [
-            {
-              "name": "1.4.1 Password salah -Error",
-              "request": {
-                "auth": {
-                  "type": "noauth"
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "email",
+                  "value": "rickyprakusa281@gmail.com",
+                  "type": "text",
+                  "description": "(Wajib) Email aktif"
                 },
+                {
+                  "key": "password",
+                  "value": "Password123!",
+                  "type": "text",
+                  "description": "(Wajib) Kata sandi akun"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/auth/resend-otp",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "auth", "resend-otp"]
+            },
+            "description": "Kirim ulang OTP baru dengan validasi password dan pembatasan anti-spam."
+          },
+          "response": [
+            {
+              "name": "Berhasil Resend OTP",
+              "originalRequest": {
                 "method": "POST",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "email",
-                      "value": "rickyprakusa281@gmail.com",
-                      "type": "text",
-                      "description": "(Wajib) Email aktif/terdaftar"
-                    },
-                    {
-                      "key": "password",
-                      "value": "Password12!",
-                      "type": "text",
-                      "description": "(Wajib) Kata sandi akun"
-                    }
-                  ]
+                  "urlencoded": []
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/resend-otp",
@@ -645,32 +602,26 @@
                   "path": ["api", "v1", "auth", "resend-otp"]
                 }
               },
-              "response": []
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Kode OTP baru berhasil dikirim\",\n  \"data\": {\n    \"otpExpiresAt\": \"2026-07-10T02:02:00.000Z\"\n  }\n}"
             },
             {
-              "name": "1.4.2 Email tidak terdaftar -Error",
-              "request": {
-                "auth": {
-                  "type": "noauth"
-                },
+              "name": "Gagal Resend - Password salah",
+              "originalRequest": {
                 "method": "POST",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "email",
-                      "value": "rickyprakusa28@gmail.com",
-                      "type": "text",
-                      "description": "(Wajib) Email aktif/terdaftar"
-                    },
-                    {
-                      "key": "password",
-                      "value": "Password123!",
-                      "type": "text",
-                      "description": "(Wajib) Kata sandi akun"
-                    }
-                  ]
+                  "urlencoded": []
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/resend-otp",
@@ -678,32 +629,26 @@
                   "path": ["api", "v1", "auth", "resend-otp"]
                 }
               },
-              "response": []
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"Password salah\",\n  \"data\": null\n}"
             },
             {
-              "name": "1.4.3 Data tidak lengkap -Error",
-              "request": {
-                "auth": {
-                  "type": "noauth"
-                },
+              "name": "Gagal Resend - Email tidak terdaftar",
+              "originalRequest": {
                 "method": "POST",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "email",
-                      "value": "",
-                      "type": "text",
-                      "description": "(Wajib) Email aktif/terdaftar"
-                    },
-                    {
-                      "key": "password",
-                      "value": "",
-                      "type": "text",
-                      "description": "(Wajib) Kata sandi akun"
-                    }
-                  ]
+                  "urlencoded": []
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/resend-otp",
@@ -711,32 +656,26 @@
                   "path": ["api", "v1", "auth", "resend-otp"]
                 }
               },
-              "response": []
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"User tidak ditemukan\",\n  \"data\": null\n}"
             },
             {
-              "name": "1.4.4 OTP benar -Sukses",
-              "request": {
-                "auth": {
-                  "type": "noauth"
-                },
+              "name": "Gagal Resend - Data tidak lengkap",
+              "originalRequest": {
                 "method": "POST",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "email",
-                      "value": "rickyprakusa281@gmail.com",
-                      "type": "text",
-                      "description": "(Wajib) Email aktif/terdaftar"
-                    },
-                    {
-                      "key": "password",
-                      "value": "Password123!",
-                      "type": "text",
-                      "description": "(Wajib) Kata sandi akun"
-                    }
-                  ]
+                  "urlencoded": []
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/resend-otp",
@@ -744,32 +683,26 @@
                   "path": ["api", "v1", "auth", "resend-otp"]
                 }
               },
-              "response": []
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"\\\"password\\\" is required\",\n  \"data\": null\n}"
             },
             {
-              "name": "1.4.5 Spam OTP -Error",
-              "request": {
-                "auth": {
-                  "type": "noauth"
-                },
+              "name": "Gagal Resend - Spam OTP",
+              "originalRequest": {
                 "method": "POST",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "email",
-                      "value": "rickyprakusa281@gmail.com",
-                      "type": "text",
-                      "description": "(Wajib) Email aktif/terdaftar"
-                    },
-                    {
-                      "key": "password",
-                      "value": "Password123!",
-                      "type": "text",
-                      "description": "(Wajib) Kata sandi akun"
-                    }
-                  ]
+                  "urlencoded": []
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/resend-otp",
@@ -777,32 +710,26 @@
                   "path": ["api", "v1", "auth", "resend-otp"]
                 }
               },
-              "response": []
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"OTP baru saja dikirim. Harap tunggu hingga waktu kadaluarsa selesai sebelum meminta kembali.\",\n  \"data\": null\n}"
             },
             {
-              "name": "1.4.6 Sudah diverifikasi -Error",
-              "request": {
-                "auth": {
-                  "type": "noauth"
-                },
+              "name": "Gagal Resend - Sudah diverifikasi",
+              "originalRequest": {
                 "method": "POST",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": [
-                    {
-                      "key": "email",
-                      "value": "rickyprakusa281@gmail.com",
-                      "type": "text",
-                      "description": "(Wajib) Email aktif/terdaftar"
-                    },
-                    {
-                      "key": "password",
-                      "value": "Password123!",
-                      "type": "text",
-                      "description": "(Wajib) Kata sandi akun"
-                    }
-                  ]
+                  "urlencoded": []
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/resend-otp",
@@ -810,7 +737,17 @@
                   "path": ["api", "v1", "auth", "resend-otp"]
                 }
               },
-              "response": []
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"Akun ini sudah terverifikasi\",\n  \"data\": null\n}"
             }
           ]
         }
@@ -876,7 +813,62 @@
             },
             "description": "Mengunggah atau mengganti foto profil user secara lokal via multipart/form-data."
           },
-          "response": []
+          "response": [
+            {
+              "name": "Berhasil Upload Avatar",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": []
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/users/profile/avatar",
+                  "host": ["{{BASE_URL}}"],
+                  "path": ["api", "v1", "users", "profile", "avatar"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Foto profil berhasil diperbarui\",\n  \"data\": {\n    \"avatarUrl\": \"http://localhost:3000/uploads/avatar-1783536512487.png\"\n  }\n}"
+            },
+            {
+              "name": "Gagal Upload - Ukuran melebih batas",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": []
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/users/profile/avatar",
+                  "host": ["{{BASE_URL}}"],
+                  "path": ["api", "v1", "users", "profile", "avatar"]
+                }
+              },
+              "status": "Payload Too Large",
+              "code": 413,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": false,\n  \"message\": \"File too large. Maksimum 2MB.\",\n  \"data\": null\n}"
+            }
+          ]
         },
         {
           "name": "2.3 Hapus Foto Profil (Avatar)",
@@ -900,7 +892,35 @@
             },
             "description": "Menghapus foto profil dari database dan menghapus filenya secara fisik dari server."
           },
-          "response": []
+          "response": [
+            {
+              "name": "Berhasil Hapus Avatar",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": []
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/users/profile/avatar",
+                  "host": ["{{BASE_URL}}"],
+                  "path": ["api", "v1", "users", "profile", "avatar"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Foto profil berhasil dihapus\",\n  \"data\": null\n}"
+            }
+          ]
         },
         {
           "name": "2.4 Hapus / Menonaktifkan Akun (Soft Delete)",
@@ -924,7 +944,35 @@
             },
             "description": "Menonaktifkan akun user secara aman (isDeleted: true). User terhapus tidak akan bisa login kembali."
           },
-          "response": []
+          "response": [
+            {
+              "name": "Berhasil Soft Delete",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": []
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/users/profile",
+                  "host": ["{{BASE_URL}}"],
+                  "path": ["api", "v1", "users", "profile"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Akun profil Anda berhasil dinonaktifkan (dihapus)\",\n  \"data\": null\n}"
+            }
+          ]
         }
       ]
     },
@@ -954,7 +1002,35 @@
             },
             "description": "Melihat saldo aktif dan seluruh riwayat mutasi wallet dari user bersangkutan."
           },
-          "response": []
+          "response": [
+            {
+              "name": "Berhasil Get Wallet",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": []
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/wallets",
+                  "host": ["{{BASE_URL}}"],
+                  "path": ["api", "v1", "wallets"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Berhasil mengambil data wallet\",\n  \"data\": {\n    \"_id\": \"6a4e7e15f2166c3ceea51d8d\",\n    \"balance\": 100000,\n    \"user\": {\n      \"id\": \"6a4e79f7d269611e25699002\",\n      \"name\": \"Ricky prakusa\",\n      \"email\": \"rickyprakusa281@gmail.com\"\n    },\n    \"transactions\": []\n  }\n}"
+            }
+          ]
         },
         {
           "name": "3.2 Request Top-Up Saldo",
@@ -989,7 +1065,35 @@
             },
             "description": "Membuat transaksi top-up pending dan mendapatkan URL/Token pembayaran Snap Midtrans."
           },
-          "response": []
+          "response": [
+            {
+              "name": "Berhasil Request Top-Up",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": []
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/wallets/topup",
+                  "host": ["{{BASE_URL}}"],
+                  "path": ["api", "v1", "wallets", "topup"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Top-up berhasil diajukan\",\n  \"data\": {\n    \"topupId\": \"TOPUP-1783536671049\",\n    \"amount\": 100000,\n    \"snapToken\": \"c378e9fa-20f4-4061-9c60-e41c4ad20d6f\",\n    \"redirectUrl\": \"https://app.sandbox.midtrans.com/snap/v2/vtweb/c378e9fa-20f4-4061-9c60-e41c4ad20d6f\"\n  }\n}"
+            }
+          ]
         },
         {
           "name": "3.3 Batalkan Top-Up Pending",
@@ -1020,7 +1124,42 @@
             },
             "description": "Membatalkan transaksi top-up pending secara manual."
           },
-          "response": []
+          "response": [
+            {
+              "name": "Berhasil Batalkan Top-Up",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": []
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/wallets/topup/:topupId/cancel",
+                  "host": ["{{BASE_URL}}"],
+                  "path": [
+                    "api",
+                    "v1",
+                    "wallets",
+                    "topup",
+                    ":topupId",
+                    "cancel"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Transaksi top-up berhasil dibatalkan\",\n  \"data\": null\n}"
+            }
+          ]
         },
         {
           "name": "3.4 Midtrans Webhook (Public)",
@@ -1425,7 +1564,62 @@
               "path": ["api", "v1", "hotels"]
             }
           },
-          "response": []
+          "response": [
+            {
+              "name": "Berhasil Lihat Semua Hotel",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": []
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/hotels",
+                  "host": ["{{BASE_URL}}"],
+                  "path": ["api", "v1", "hotels"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Berhasil mengambil daftar hotel\",\n  \"data\": [\n    {\n      \"_id\": \"6a4fde8e5394a959719ae3d2\",\n      \"name\": \"Grand Ambarrukmo Resort\",\n      \"description\": \"Resort bintang 5 dengan pemandangan indah dan fasilitas lengkap.\",\n      \"address\": \"Jl. Laksda Adisucipto No. 82\",\n      \"city\": \"Yogyakarta\",\n      \"categoryId\": {\n        \"_id\": \"6a4fde8e5394a959719ae3d0\",\n        \"name\": \"Resort\"\n      },\n      \"ownerId\": {\n        \"_id\": \"6a4fde8e5394a959719ae3cf\",\n        \"name\": \"Budi Manajer\",\n        \"email\": \"manager@hotel.com\"\n      }\n    }\n  ]\n}"
+            },
+            {
+              "name": "Gagal Lihat Semua Hotel - Kosong",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": []
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/hotels",
+                  "host": ["{{BASE_URL}}"],
+                  "path": ["api", "v1", "hotels"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"success\": true,\n  \"message\": \"Daftar hotel kosong\",\n  \"data\": []\n}"
+            }
+          ]
         },
         {
           "name": "6.3 Get Hotel Details by ID",
@@ -2053,6 +2247,75 @@
               "host": ["{{BASE_URL}}"],
               "path": ["api", "v1", "health"]
             }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "10. Weather Forecast (OpenWeatherMap)",
+      "description": "Modul integrasi dengan OpenWeatherMap API untuk melihat prakiraan cuaca di kota hotel atau pencarian kota umum.",
+      "item": [
+        {
+          "name": "10.1 Get Current Weather by City",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/weather/current?city=Jakarta",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "weather", "current"],
+              "query": [
+                {
+                  "key": "city",
+                  "value": "Jakarta",
+                  "description": "(Wajib) Nama kota pencarian cuaca"
+                }
+              ]
+            },
+            "description": "Melihat informasi cuaca saat ini berdasarkan nama kota."
+          },
+          "response": []
+        },
+        {
+          "name": "10.2 Get 5 Days Weather Forecast",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/weather/forecast?city=Jakarta",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "weather", "forecast"],
+              "query": [
+                {
+                  "key": "city",
+                  "value": "Jakarta",
+                  "description": "(Wajib) Nama kota pencarian ramalan cuaca"
+                }
+              ]
+            },
+            "description": "Melihat prakiraan cuaca selama 5 hari ke depan untuk kota tertentu."
+          },
+          "response": []
+        },
+        {
+          "name": "10.3 Get Weather by Hotel ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/weather/hotels/:hotelId",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "weather", "hotels", ":hotelId"],
+              "variable": [
+                {
+                  "key": "hotelId",
+                  "value": "",
+                  "description": "(Wajib) ID Hotel lokal di database"
+                }
+              ]
+            },
+            "description": "Melihat info cuaca real-time di lokasi kota hotel tertentu berada."
           },
           "response": []
         }
