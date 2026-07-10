@@ -9,6 +9,7 @@ router.post("/", authMiddleware, bookingController.createBooking);
 router.get("/", authMiddleware, bookingController.getBookings);
 router.get("/:id", authMiddleware, bookingController.getBookingById);
 router.put("/:id/cancel", authMiddleware, bookingController.cancelBooking);
+router.put("/:id/extend", authMiddleware, bookingController.extendBooking);
 router.put(
   "/:id/refund",
   authMiddleware,

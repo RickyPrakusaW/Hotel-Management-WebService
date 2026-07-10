@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const helmet = require("helmet");
 const morgan = require("morgan");
+const path = require("path");
 const connectDB = require("./src/config/database");
 const errorHandler = require("./src/middlewares/errorHandler");
 
@@ -14,24 +15,23 @@ connectDB();
 
 // Standard Middlewares
 app.use(cors());
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: false // Izinkan loading CDN script Lucide & Google Fonts
+}));
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static files for uploads
+// Serve static files (Public folder & uploads)
+app.use(express.static(path.join(__dirname, "public")));
 app.use("/public/uploads", express.static("public/uploads"));
 
 // API Routes
 app.use("/api/v1", require("./src/routes"));
 
-// Tester Endpoint
+// Tester / Dashboard Endpoint
 app.get("/", (req, res) => {
-  res.status(200).json({
-    success: true,
-    message: "Hotel Management API is running successfully",
-    data: null,
-  });
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 // Handling 404 Not Found

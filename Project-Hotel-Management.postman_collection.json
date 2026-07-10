@@ -61,7 +61,7 @@
                 "register"
               ]
             },
-            "description": "Mendaftarkan pengguna baru ke sistem."
+            "description": "Mendaftarkan akun baru ke sistem.\n\n**Role**: Public / Guest\n**Body Parameters (urlencoded)**:\n- `name` (Wajib) Nama lengkap pengguna\n- `email` (Wajib) Email unik untuk login\n- `password` (Wajib) Min. 8 karakter\n- `phone` (Wajib) Nomor telepon aktif\n- `role` (Opsional) Pilihan: 'Customer', 'HotelManager', 'Admin' (Default: 'Customer')"
           },
           "response": [
             {
@@ -304,7 +304,7 @@
                 "login"
               ]
             },
-            "description": "Melakukan otentikasi login pengguna dan mengembalikan token JWT."
+            "description": "Melakukan autentikasi masuk ke sistem menggunakan email dan password untuk mendapatkan token JWT.\n\n**Role**: Public / Guest\n**Body Parameters (urlencoded)**:\n- `email` (Wajib) Email terdaftar\n- `password` (Wajib) Password terdaftar"
           },
           "response": [
             {
@@ -513,7 +513,7 @@
                 "verify-otp"
               ]
             },
-            "description": "Memverifikasi akun menggunakan kode OTP yang dikirim ke email."
+            "description": "Memverifikasi akun pengguna yang baru didaftarkan dengan kode OTP yang dikirimkan ke email.\n\n**Role**: Public / Guest\n**Body Parameters (urlencoded)**:\n- `email` (Wajib) Email pengguna\n- `otp` (Wajib) Kode OTP 6 digit"
           },
           "response": [
             {
@@ -722,7 +722,7 @@
                 "resend-otp"
               ]
             },
-            "description": "Kirim ulang OTP baru dengan validasi password dan pembatasan anti-spam."
+            "description": "Mengirimkan kembali kode verifikasi OTP yang baru ke email pengguna.\n\n**Role**: Public / Guest\n**Body Parameters (urlencoded)**:\n- `email` (Wajib) Email pengguna"
           },
           "response": [
             {
@@ -932,7 +932,7 @@
           ]
         }
       ],
-      "description": "Modul untuk registrasi, verifikasi OTP, pengiriman ulang OTP, dan login pengguna."
+      "description": "Modul untuk registrasi pengguna baru, verifikasi kode OTP, pengiriman ulang kode OTP, dan otentikasi login pengguna."
     },
     {
       "name": "2. User Profile",
@@ -964,7 +964,7 @@
                 "profile"
               ]
             },
-            "description": "Mengambil informasi profil lengkap dari user yang aktif menggunakan token JWT."
+            "description": "Mengambil informasi detail profil lengkap dari pengguna yang sedang masuk (logged-in).\n\n**Role**: Logged-In User\n**Header**: `Authorization: Bearer <token>`"
           },
           "response": []
         },
@@ -1007,7 +1007,7 @@
                 "avatar"
               ]
             },
-            "description": "Mengunggah atau mengganti foto profil user secara lokal via multipart/form-data."
+            "description": "Mengunggah berkas foto profil baru menggunakan middleware Multer.\n\n**Role**: Logged-In User\n**Header**: `Authorization: Bearer <token>`\n**Body (form-data)**:\n- `avatar` (Wajib, File gambar, maks. 2MB)"
           },
           "response": [
             {
@@ -1110,7 +1110,7 @@
                 "avatar"
               ]
             },
-            "description": "Menghapus foto profil dari database dan menghapus filenya secara fisik dari server."
+            "description": "Menghapus foto profil avatar pengguna saat ini dan mengembalikannya ke avatar default.\n\n**Role**: Logged-In User\n**Header**: `Authorization: Bearer <token>`"
           },
           "response": [
             {
@@ -1177,7 +1177,7 @@
                 "profile"
               ]
             },
-            "description": "Menonaktifkan akun user secara aman (isDeleted: true). User terhapus tidak akan bisa login kembali."
+            "description": "Menonaktifkan akun pengguna saat ini secara lunak (Soft Delete).\n\n**Role**: Logged-In User\n**Header**: `Authorization: Bearer <token>`"
           },
           "response": [
             {
@@ -1217,7 +1217,7 @@
           ]
         }
       ],
-      "description": "Mengelola detail profil pengguna, mengunggah foto profil, dan menonaktifkan akun."
+      "description": "Mengelola detail profil pengguna terautentikasi, upload foto profil menggunakan Multer, hapus foto, serta menonaktifkan akun."
     },
     {
       "name": "3. E-Wallet & Payments",
@@ -1248,7 +1248,7 @@
                 "wallets"
               ]
             },
-            "description": "Melihat saldo aktif dan seluruh riwayat mutasi wallet dari user bersangkutan."
+            "description": "Mendapatkan saldo dompet digital serta seluruh riwayat mutasi transaksi (topup, payment, refund).\n\n**Role**: Customer / Logged-In User\n**Header**: `Authorization: Bearer <token>`"
           },
           "response": [
             {
@@ -1320,7 +1320,7 @@
                 "topup"
               ]
             },
-            "description": "Membuat transaksi top-up pending dan mendapatkan URL/Token pembayaran Snap Midtrans."
+            "description": "Membuat permintaan top-up saldo baru dan men-generate token transaksi serta redirect url pembayaran Midtrans Snap.\n\n**Role**: Customer\n**Header**: `Authorization: Bearer <token>`\n**Body (urlencoded)**:\n- `amount` (Wajib) Nominal top-up minimal Rp10.000"
           },
           "response": [
             {
@@ -1395,7 +1395,7 @@
                 }
               ]
             },
-            "description": "Membatalkan transaksi top-up pending secara manual."
+            "description": "Membatalkan transaksi top-up yang masih berstatus pending.\n\n**Role**: Customer\n**Header**: `Authorization: Bearer <token>`"
           },
           "response": [
             {
@@ -1467,12 +1467,12 @@
                 "webhook"
               ]
             },
-            "description": "Endpoint publik untuk callback otomatis notifikasi pembayaran dari server Midtrans."
+            "description": "Webhook callback otomatis dari server Midtrans untuk memperbarui status transaksi (topup sukses, expired, dll) secara instan di database.\n\n**Role**: Public / Midtrans Server\n**Body (JSON)**: Payload callback standar dari Midtrans"
           },
           "response": []
         }
       ],
-      "description": "Mengelola saldo dompet digital, memicu request top-up, pembatalan top-up, dan penerimaan status webhook Midtrans."
+      "description": "Mengelola detail saldo e-wallet pengguna, request pembayaran topup via Midtrans Snap, pembatalan topup, dan penanganan status webhook callback dari Midtrans."
     },
     {
       "name": "4. Categories",
@@ -1513,7 +1513,8 @@
                 "v1",
                 "categories"
               ]
-            }
+            },
+            "description": "Membuat kategori hotel baru.\n\n**Role**: Admin\n**Header**: `Authorization: Bearer <token>`\n**Body (urlencoded)**:\n- `name` (Wajib) Nama kategori\n- `description` (Wajib) Deskripsi kategori"
           },
           "response": []
         },
@@ -1532,7 +1533,8 @@
                 "v1",
                 "categories"
               ]
-            }
+            },
+            "description": "Mengambil seluruh daftar kategori hotel yang aktif di sistem.\n\n**Role**: Public / Guest"
           },
           "response": []
         },
@@ -1580,7 +1582,8 @@
                   "description": "ID Kategori"
                 }
               ]
-            }
+            },
+            "description": "Memperbarui data detail kategori berdasarkan ID.\n\n**Role**: Admin\n**Header**: `Authorization: Bearer <token>`\n**Body (urlencoded)**:\n- `name` / `description` (Opsional)"
           },
           "response": []
         },
@@ -1617,12 +1620,13 @@
                   "description": "ID Kategori"
                 }
               ]
-            }
+            },
+            "description": "Menghapus data kategori hotel secara lunak berdasarkan ID.\n\n**Role**: Admin\n**Header**: `Authorization: Bearer <token>`"
           },
           "response": []
         }
       ],
-      "description": "Modul CRUD master data kategori hotel."
+      "description": "Modul CRUD master data kategori hotel (Resort, Budget, City Hotel, dll)."
     },
     {
       "name": "5. Vouchers",
@@ -1687,7 +1691,8 @@
                 "v1",
                 "vouchers"
               ]
-            }
+            },
+            "description": "Membuat voucher diskon promosi baru.\n\n**Role**: Admin / HotelManager\n**Header**: `Authorization: Bearer <token>`\n**Body (urlencoded)**:\n- `code` (Wajib) Kode voucher unik (Auto-Uppercase)\n- `type` (Wajib) percentage / fixed\n- `value` (Wajib) Nominal/persen diskon\n- `quota` (Wajib) Total kuota pemakaian\n- `startDate` (Wajib) YYYY-MM-DD\n- `expiredDate` (Wajib) YYYY-MM-DD"
           },
           "response": []
         },
@@ -1716,7 +1721,8 @@
                 "v1",
                 "vouchers"
               ]
-            }
+            },
+            "description": "Mengambil seluruh voucher diskon yang ada di sistem.\n\n**Role**: Admin / HotelManager\n**Header**: `Authorization: Bearer <token>`"
           },
           "response": []
         },
@@ -1753,7 +1759,8 @@
                   "description": "Kode voucher diskon"
                 }
               ]
-            }
+            },
+            "description": "Mengecek keabsahan dan detail kuota kode voucher sebelum digunakan untuk booking.\n\n**Role**: Customer\n**Header**: `Authorization: Bearer <token>`"
           },
           "response": []
         },
@@ -1800,7 +1807,8 @@
                   "description": "ID Voucher"
                 }
               ]
-            }
+            },
+            "description": "Mengubah data detail voucher berdasarkan ID.\n\n**Role**: Admin / HotelManager\n**Header**: `Authorization: Bearer <token>`"
           },
           "response": []
         },
@@ -1837,12 +1845,13 @@
                   "description": "ID Voucher"
                 }
               ]
-            }
+            },
+            "description": "Menghapus voucher secara lunak berdasarkan ID.\n\n**Role**: Admin / HotelManager\n**Header**: `Authorization: Bearer <token>`"
           },
           "response": []
         }
       ],
-      "description": "Modul CRUD master voucher diskon promosi."
+      "description": "Modul manajemen voucher diskon promosi untuk memotong harga total pemesanan kamar."
     },
     {
       "name": "6. Hotels & Room",
@@ -1885,7 +1894,7 @@
                     "rooms"
                   ]
                 },
-                "description": "Mengambil daftar seluruh tipe kamar yang ditawarkan oleh satu properti hotel spesifik. Endpoint publik ini berguna untuk ditampilkan pada katalog pencarian pelanggan."
+                "description": "Mengambil seluruh daftar tipe kamar untuk hotel tertentu.\n\n**Role**: Public / Guest"
               },
               "response": [
                 {
@@ -2150,7 +2159,7 @@
                     ""
                   ]
                 },
-                "description": "Memperbarui spesifikasi tipe kamar tertentu, seperti penyesuaian harga (`pricePerNight`), mengubah kuota kamar, atau memperbarui daftar fasilitas."
+                "description": "Memperbarui data tipe kamar berdasarkan hotelId dan roomId.\n\n**Role**: Admin / HotelManager\n**Header**: `Authorization: Bearer <token>`"
               },
               "response": [
                 {
@@ -2426,7 +2435,7 @@
                     "6a5076112508385d9a881db0"
                   ]
                 },
-                "description": "Menghapus satu varian tipe kamar dari dalam sistem properti hotel secara permanen. Tindakan ini akan mencabut sub-dokumen kamar dari _array_ `room_types.`"
+                "description": "Menghapus tipe kamar dari hotel.\n\n**Role**: Admin / HotelManager\n**Header**: `Authorization: Bearer <token>`"
               },
               "response": [
                 {
@@ -2604,7 +2613,7 @@
                     "rooms"
                   ]
                 },
-                "description": "Menambahkan tipe kamar baru (misal: Deluxe, Suite) ke dalam properti hotel tertentu sebagai sub-dokumen. Menyimpan detail harga per malam, kapasitas maksimal tamu, daftar fasilitas spesifik kamar, dan batas kuota reservasi."
+                "description": "Menambahkan tipe kamar baru di array room_types hotel.\n\n**Role**: Admin / HotelManager\n**Header**: `Authorization: Bearer <token>`\n**Body (urlencoded)**:\n- `name` (Wajib) Nama kamar\n- `pricePerNight` (Wajib) Harga per malam\n- `totalQuota` (Wajib) Total kuota kamar"
               },
               "response": [
                 {
@@ -2897,7 +2906,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "description": "Sub-modul untuk mengelola Tipe Kamar (Room Types) yang disematkan di dalam dokumen hotel."
         },
         {
           "name": "TambahHotel",
@@ -2966,7 +2976,7 @@
                 "hotels"
               ]
             },
-            "description": "Endpoint ini digunakan untuk mendaftarkan properti hotel baru ke dalam sistem. Wajib menyertakan `categoryId` yang valid dari master kategori. Hanya dapat diakses oleh role Admin atau Hotel Manager. Data yang dibuat akan otomatis terikat dengan `ownerId` dari token pengguna yang sedang login."
+            "description": "Membuat data hotel baru.\n\n**Role**: Admin / HotelManager\n**Header**: `Authorization: Bearer <token>`\n**Body (urlencoded)**:\n- `name` (Wajib) Nama hotel\n- `address` (Wajib) Alamat lengkap\n- `city` (Wajib) Kota hotel\n- `categoryId` (Wajib) ID Kategori hotel"
           },
           "response": [
             {
@@ -3325,7 +3335,7 @@
                 "hotelss"
               ]
             },
-            "description": "Mengambil daftar seluruh properti hotel yang aktif di sistem. Endpoint ini bersifat publik. Data yang dikembalikan sudah memfilter hotel yang berstatus dihapus (menggunakan sistem _Soft Delete_ `isDeleted: false`) dan melakukan _populate_ pada detail kategori dan pemilik."
+            "description": "Mengambil seluruh daftar hotel yang terdaftar di database.\n\n**Role**: Public / Guest"
           },
           "response": [
             {
@@ -3685,7 +3695,7 @@
                 "6a4fedbf758ffb1cc90c37f5"
               ]
             },
-            "description": "Mengambil rincian informasi lengkap dari satu properti hotel spesifik berdasarkan `id` hotel (MongoDB ObjectId). Endpoint ini bersifat publik dan mengembalikan data fasilitas dasar beserta daftar kamar yang tersedia.EndFragment"
+            "description": "Mendapatkan informasi detail lengkap satu hotel berdasarkan ID.\n\n**Role**: Public / Guest"
           },
           "response": [
             {
@@ -4048,7 +4058,7 @@
                 "6a4fedbf758ffb1cc90c37f5"
               ]
             },
-            "description": "Memperbarui detail informasi hotel (seperti nama, alamat, kota, atau status featured). Hanya pemilik hotel (Hotel Manager terkait) atau Admin yang diizinkan melakukan pembaruan data pada endpoint ini."
+            "description": "Memperbarui detail data hotel.\n\n**Role**: Admin / HotelManager (Hanya owner hotel terkait)\n**Header**: `Authorization: Bearer <token>`"
           },
           "response": [
             {
@@ -4415,7 +4425,7 @@
                 "6a4fedbf758ffb1cc90c37f5"
               ]
             },
-            "description": "Menonaktifkan data hotel dari sistem. Endpoint ini menerapkan mekanisme _Soft Delete_ (mengubah status `isDeleted` menjadi true dan mencatat `deletedAt`), sehingga integritas data pada riwayat transaksi (_booking_) pelanggan sebelumnya tetap terjaga dengan aman."
+            "description": "Menghapus hotel secara soft delete.\n\n**Role**: Admin / HotelManager (Hanya owner hotel terkait)\n**Header**: `Authorization: Bearer <token>`"
           },
           "response": [
             {
@@ -4707,7 +4717,7 @@
           ]
         }
       ],
-      "description": "StartFragmentModul ini mengelola data master Hotel beserta sub-dokumen Tipe Kamar (Room Types). Meliputi penambahan properti baru, manajemen fasilitas kamar, hingga unggah foto. Akses modifikasi (POST, PUT, DELETE) dibatasi hanya untuk otorisasi `Admin` dan `HotelManager`.EndFragment"
+      "description": "Modul untuk mengelola data master Hotel beserta sub-dokumen Tipe Kamar (Room Types). Akses modifikasi (POST, PUT, DELETE) dibatasi hanya untuk Admin dan HotelManager."
     },
     {
       "name": "7. Bookings & Transactions",
@@ -4778,7 +4788,8 @@
                 "v1",
                 "bookings"
               ]
-            }
+            },
+            "description": "Membuat transaksi pemesanan kamar hotel baru. Mendukung diskon voucher, pembayaran saldo E-Wallet instan, atau pembayaran Midtrans Snap.\n\n**Role**: Customer\n**Header**: `Authorization: Bearer <token>`\n**Body (JSON)**:\n- `hotelId` (Wajib) ID Hotel\n- `checkInDate` (Wajib) Format YYYY-MM-DD\n- `checkOutDate` (Wajib) Format YYYY-MM-DD\n- `paymentMethod` (Wajib) wallet / midtrans\n- `details` (Wajib) Array tipe kamar dan kuota\n- `voucherCode` (Opsional) Kode diskon voucher"
           },
           "response": []
         },
@@ -4807,7 +4818,8 @@
                 "v1",
                 "bookings"
               ]
-            }
+            },
+            "description": "Mengambil riwayat transaksi booking. Customer hanya melihat datanya sendiri. Manager melihat booking hotel miliknya. Admin melihat semua.\n\n**Role**: Logged-In User\n**Header**: `Authorization: Bearer <token>`"
           },
           "response": []
         },
@@ -4844,7 +4856,8 @@
                   "description": "ID Booking"
                 }
               ]
-            }
+            },
+            "description": "Mendapatkan informasi detail pemesanan hotel berdasarkan ID.\n\n**Role**: Admin / HotelManager (Owner hotel terkait) / Customer (Pemilik booking)\n**Header**: `Authorization: Bearer <token>`"
           },
           "response": []
         },
@@ -4882,7 +4895,8 @@
                   "description": "ID Booking"
                 }
               ]
-            }
+            },
+            "description": "Membatalkan pemesanan. Bila status confirmed dan bayar via wallet, saldo akan otomatis direfund secara instan.\n\n**Role**: Customer (Pemilik booking) / Manager / Admin\n**Header**: `Authorization: Bearer <token>`"
           },
           "response": []
         },
@@ -4920,12 +4934,13 @@
                   "description": "ID Booking"
                 }
               ]
-            }
+            },
+            "description": "Menyetujui permohonan refund pembayaran booking yang diajukan customer.\n\n**Role**: Admin\n**Header**: `Authorization: Bearer <token>`"
           },
           "response": []
         }
       ],
-      "description": "Modul transaksi pemesanan kamar hotel oleh Customer."
+      "description": "Modul utama untuk melakukan transaksi pemesanan kamar hotel oleh Customer dengan opsi pembayaran saldo E-Wallet atau integrasi Snap Midtrans."
     },
     {
       "name": "8. Check-In, Check-Out & Ulasan",
@@ -4964,7 +4979,8 @@
                   "description": "ID Booking"
                 }
               ]
-            }
+            },
+            "description": "Memproses check-in tamu ketika sampai di hotel.\n\n**Role**: Admin / HotelManager\n**Header**: `Authorization: Bearer <token>`"
           },
           "response": []
         },
@@ -5002,7 +5018,8 @@
                   "description": "ID Booking"
                 }
               ]
-            }
+            },
+            "description": "Memproses check-out tamu ketika selesai menginap dan otomatis memulihkan kuota kamar hotel.\n\n**Role**: Admin / HotelManager\n**Header**: `Authorization: Bearer <token>`"
           },
           "response": []
         },
@@ -5057,7 +5074,8 @@
                   "description": "ID Booking terkait"
                 }
               ]
-            }
+            },
+            "description": "Memberikan ulasan rating bintang (1-5) dan komentar ulasan setelah check-out.\n\n**Role**: Customer (Pemilik booking)\n**Header**: `Authorization: Bearer <token>`\n**Body (urlencoded)**:\n- `rating` (Wajib) 1 s/d 5\n- `comment` (Opsional)"
           },
           "response": []
         },
@@ -5085,12 +5103,13 @@
                   "description": "ID Hotel lokal"
                 }
               ]
-            }
+            },
+            "description": "Mengambil seluruh ulasan ulasan tamu untuk hotel tertentu.\n\n**Role**: Public / Guest"
           },
           "response": []
         }
       ],
-      "description": "Modul tambahan untuk check-in/out tamu dan review ulasan hotel."
+      "description": "Modul tambahan untuk check-in/out tamu hotel dan pemberian ulasan/review bintang."
     },
     {
       "name": "9. System Health Check",
@@ -5110,12 +5129,13 @@
                 "v1",
                 "health"
               ]
-            }
+            },
+            "description": "Mendapatkan status kesehatan server Node.js dan uptime sistem.\n\n**Role**: Public / Guest"
           },
           "response": []
         }
       ],
-      "description": "Melihat status kesehatan server dan koneksi database."
+      "description": "Mengecek kesehatan sistem server web service."
     },
     {
       "name": "10. Weather Forecast (OpenWeatherMap)",
@@ -5144,7 +5164,7 @@
                 }
               ]
             },
-            "description": "Melihat informasi cuaca saat ini berdasarkan nama kota."
+            "description": "Mengambil cuaca real-time di kota tertentu.\n\n**Role**: Public / Guest"
           },
           "response": []
         },
@@ -5172,7 +5192,7 @@
                 }
               ]
             },
-            "description": "Melihat prakiraan cuaca selama 5 hari ke depan untuk kota tertentu."
+            "description": "Mengambil ramalan perkiraan cuaca 5 hari di kota tertentu.\n\n**Role**: Public / Guest"
           },
           "response": []
         },
@@ -5201,12 +5221,12 @@
                 }
               ]
             },
-            "description": "Melihat info cuaca real-time di lokasi kota hotel tertentu berada."
+            "description": "Mengambil cuaca real-time berdasarkan kota hotel terkait.\n\n**Role**: Public / Guest"
           },
           "response": []
         }
       ],
-      "description": "Modul integrasi dengan OpenWeatherMap API untuk melihat prakiraan cuaca di kota hotel atau pencarian kota umum."
+      "description": "Modul tambahan cuaca setempat menggunakan OpenWeatherMap API (Opsional)."
     }
   ],
   "variable": [

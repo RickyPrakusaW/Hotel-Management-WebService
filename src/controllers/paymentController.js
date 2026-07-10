@@ -73,10 +73,46 @@ exports.handleWebhook = async (req, res) => {
         );
       }
     } else if (order_id.startsWith("BK-")) {
-      // Log info untuk Booking (akan dihubungkan penuh di modul Booking)
-      console.log(
-        `[Midtrans Webhook] Menerima notifikasi pembayaran Booking untuk order_id: ${order_id}. Sukses: ${isSuccess}`,
-      );
+      const { Booking, Hotel } = require("../models");
+      const isExtension = order_id.includes("-EXT-");
+      const bookingCode = isExtension ? order_id.split("-EXT-")[0] : order_id;
+
+      const booking = await Booking.findOne({ bookingCode });
+      if (booking) {
+        if (isSuccess) {
+          // Jika status sebelumnya pending_payment (pembayaran booking awal), ubah ke confirmed
+          if (booking.status === "pending_payment") {
+            booking.status = "confirmed";
+          }
+          booking.payment.paidAt = new Date();
+          booking.payment.transactionId = body.transaction_id || null;
+          await booking.save();
+          console.log(
+            `[Midtrans Webhook] Pembayaran booking ${bookingCode} sukses. Status di-update.`
+          );
+        } else if (isFailure) {
+          // Jika booking gagal bayar (expired/cancelled)
+          if (!isExtension && booking.status === "pending_payment") {
+            booking.status = transaction_status === "expire" ? "expired" : "cancelled";
+            await booking.save();
+
+            // Pulihkan kuota kamar hotel
+            const hotel = await Hotel.findById(booking.hotelId);
+            if (hotel) {
+              for (const item of booking.details) {
+                const roomType = hotel.room_types.id(item.roomTypeId);
+                if (roomType) {
+                  roomType.available_quota += item.quantity;
+                }
+              }
+              await hotel.save();
+            }
+            console.log(
+              `[Midtrans Webhook] Booking ${bookingCode} gagal bayar. Status diubah ke ${booking.status} dan kuota kamar dipulihkan.`
+            );
+          }
+        }
+      }
     }
 
     // Kirim response 200 OK ke Midtrans

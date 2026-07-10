@@ -8,6 +8,7 @@ const Voucher = require("./src/models/Voucher");
 const Wallet = require("./src/models/Wallet");
 const WalletTransaction = require("./src/models/WalletTransaction");
 const Booking = require("./src/models/Booking");
+const Review = require("./src/models/Review");
 
 const seedData = async () => {
   try {
@@ -113,7 +114,7 @@ const seedData = async () => {
 
     // 7. Buat Data Hotel & Tipe Kamar
     console.log("Membuat data Hotel & Tipe Kamar...");
-    await Hotel.create({
+    const hotel1 = await Hotel.create({
       name: "Grand Ambarrukmo Resort",
       description:
         "Resort bintang 5 dengan pemandangan indah dan fasilitas lengkap.",
@@ -127,7 +128,7 @@ const seedData = async () => {
           name: "Deluxe Room",
           pricePerNight: 150000,
           totalQuota: 20,
-          available_quota: 20,
+          available_quota: 19, // Berkurang 1 karena ada booking dummy
           capacity: 2,
           facilities: ["Wi-Fi", "AC", "TV 42 Inch", "Breakfast"],
         },
@@ -142,7 +143,7 @@ const seedData = async () => {
       ],
     });
 
-    await Hotel.create({
+    const hotel2 = await Hotel.create({
       name: "Amaris Hotel Yogyakarta",
       description: "Pilihan menginap ekonomis di pusat kota Yogyakarta.",
       address: "Jl. Diponegoro No. 87",
@@ -155,11 +156,99 @@ const seedData = async () => {
           name: "Smart Room Double",
           pricePerNight: 80000,
           totalQuota: 15,
-          available_quota: 15,
+          available_quota: 14, // Berkurang 1 karena ada booking dummy
           capacity: 2,
           facilities: ["Wi-Fi", "AC", "TV 32 Inch", "Breakfast"],
         },
       ],
+    });
+
+    // 8. Buat Data Booking & Review Dummy
+    console.log("Membuat data Booking & Review dummy...");
+
+    // Booking 1: Sudah Selesai (Checked Out)
+    const checkIn1 = new Date();
+    checkIn1.setDate(checkIn1.getDate() - 5);
+    const checkOut1 = new Date();
+    checkOut1.setDate(checkOut1.getDate() - 3);
+
+    const roomTypeDeluxe = hotel1.room_types[0];
+    const subtotal1 = roomTypeDeluxe.pricePerNight * 1 * 2; // 1 kamar, 2 malam
+
+    const booking1 = await Booking.create({
+      bookingCode: `BK-20260705-1234-0001`,
+      customerId: customer._id,
+      hotelId: hotel1._id,
+      checkInDate: checkIn1,
+      checkOutDate: checkOut1,
+      details: [
+        {
+          roomTypeId: roomTypeDeluxe._id,
+          roomTypeName: roomTypeDeluxe.name,
+          pricePerNight: roomTypeDeluxe.pricePerNight,
+          quantity: 1,
+          nights: 2,
+          subtotal: subtotal1,
+        },
+      ],
+      subtotal: subtotal1,
+      discountAmount: 0,
+      totalAmount: subtotal1,
+      paymentMethod: "wallet",
+      status: "checked_out",
+      expiresAt: new Date(),
+    });
+
+    // Ulasan (Review) untuk Booking 1
+    await Review.create({
+      hotelId: hotel1._id,
+      customerId: customer._id,
+      bookingId: booking1._id,
+      rating: 5,
+      comment: "Sangat menyenangkan menginap di Grand Ambarrukmo Resort! Kamar Deluxe bersih dan breakfast-nya lezat.",
+    });
+
+    // Update rata-rata rating di hotel1
+    hotel1.rating = 5;
+    hotel1.reviewCount = 1;
+    await hotel1.save();
+
+    // Booking 2: Sedang Aktif / Terkonfirmasi (Confirmed)
+    const checkIn2 = new Date();
+    checkIn2.setDate(checkIn2.getDate() + 1); // Besok
+    const checkOut2 = new Date();
+    checkOut2.setDate(checkOut2.getDate() + 3); // Lusa + 1 malam
+
+    const roomTypeSmart = hotel2.room_types[0];
+    const subtotal2 = roomTypeSmart.pricePerNight * 1 * 2; // 1 kamar, 2 malam
+
+    await Booking.create({
+      bookingCode: `BK-20260710-5678-0002`,
+      customerId: customer._id,
+      hotelId: hotel2._id,
+      checkInDate: checkIn2,
+      checkOutDate: checkOut2,
+      details: [
+        {
+          roomTypeId: roomTypeSmart._id,
+          roomTypeName: roomTypeSmart.name,
+          pricePerNight: roomTypeSmart.pricePerNight,
+          quantity: 1,
+          nights: 2,
+          subtotal: subtotal2,
+        },
+      ],
+      subtotal: subtotal2,
+      discountAmount: 0,
+      totalAmount: subtotal2,
+      paymentMethod: "midtrans",
+      status: "confirmed",
+      expiresAt: new Date(),
+      payment: {
+        snapToken: "bk-dummy-snap-token-2",
+        redirectUrl: "https://app.sandbox.midtrans.com/snap/v2/vtweb/bk-dummy-2",
+        paidAt: new Date(),
+      },
     });
 
     console.log(
