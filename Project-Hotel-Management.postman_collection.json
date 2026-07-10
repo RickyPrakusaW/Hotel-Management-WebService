@@ -1,15 +1,13 @@
 {
   "info": {
-    "_postman_id": "1b45ebcb-8f8f-4869-8bc4-a35dfaefb6e3",
+    "_postman_id": "445802fb-102a-4c69-bc29-9ba10dcc5f90",
     "name": "Project-Hotel-Management",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "55022572",
-    "_collection_link": "https://go.postman.co/collection/55022572-1b45ebcb-8f8f-4869-8bc4-a35dfaefb6e3?source=collection_link"
+    "_exporter_id": "43031311"
   },
   "item": [
     {
       "name": "1. Auth & Security",
-      "description": "Modul untuk registrasi, verifikasi OTP, pengiriman ulang OTP, dan login pengguna.",
       "item": [
         {
           "name": "1.1 Register",
@@ -53,8 +51,15 @@
             },
             "url": {
               "raw": "{{BASE_URL}}/api/v1/auth/register",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "auth", "register"]
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register"
+              ]
             },
             "description": "Mendaftarkan pengguna baru ke sistem."
           },
@@ -70,8 +75,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/register",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "register"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "register"
+                  ]
                 }
               },
               "status": "Created",
@@ -97,8 +109,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/register",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "register"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "register"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -124,8 +143,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/register",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "register"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "register"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -151,8 +177,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/register",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "register"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "register"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -178,8 +211,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/register",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "register"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "register"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -205,8 +245,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/register",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "register"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "register"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -247,8 +294,15 @@
             },
             "url": {
               "raw": "{{BASE_URL}}/api/v1/auth/login",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "auth", "login"]
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login"
+              ]
             },
             "description": "Melakukan otentikasi login pengguna dan mengembalikan token JWT."
           },
@@ -264,8 +318,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/login",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "login"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "login"
+                  ]
                 }
               },
               "status": "OK",
@@ -278,7 +339,7 @@
                 }
               ],
               "cookie": [],
-              "body": "{\n  \"success\": true,\n  \"message\": \"Login berhasil\",\n  \"data\": {\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\",\n    \"user\": {\n      \"id\": \"6a4e79f7d269611e25699002\",\n      \"name\": \"Ricky prakusa\",\n      \"email\": \"rickyprakusa281@gmail.com\",\n      \"role\": \"Customer\"\n    }\n  }\n}"
+              "body": "{\n  \"success\": true,\n  \"message\": \"Login berhasil\",\n  \"data\": {\n    \"token\": \"{{supabase_service_role_api_key_0hsq}}...\",\n    \"user\": {\n      \"id\": \"6a4e79f7d269611e25699002\",\n      \"name\": \"Ricky prakusa\",\n      \"email\": \"rickyprakusa281@gmail.com\",\n      \"role\": \"Customer\"\n    }\n  }\n}"
             },
             {
               "name": "Gagal Login - Belum terverifikasi OTP",
@@ -291,8 +352,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/login",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "login"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "login"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -318,8 +386,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/login",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "login"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "login"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -345,8 +420,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/login",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "login"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "login"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -372,8 +454,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/login",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "login"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "login"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -414,8 +503,15 @@
             },
             "url": {
               "raw": "{{BASE_URL}}/api/v1/auth/verify-otp",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "auth", "verify-otp"]
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "verify-otp"
+              ]
             },
             "description": "Memverifikasi akun menggunakan kode OTP yang dikirim ke email."
           },
@@ -431,8 +527,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/verify-otp",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "verify-otp"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "verify-otp"
+                  ]
                 }
               },
               "status": "OK",
@@ -458,8 +561,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/verify-otp",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "verify-otp"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "verify-otp"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -485,8 +595,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/verify-otp",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "verify-otp"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "verify-otp"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -512,8 +629,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/verify-otp",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "verify-otp"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "verify-otp"
+                  ]
                 }
               },
               "status": "Not Found",
@@ -539,8 +663,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/verify-otp",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "verify-otp"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "verify-otp"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -581,8 +712,15 @@
             },
             "url": {
               "raw": "{{BASE_URL}}/api/v1/auth/resend-otp",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "auth", "resend-otp"]
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "resend-otp"
+              ]
             },
             "description": "Kirim ulang OTP baru dengan validasi password dan pembatasan anti-spam."
           },
@@ -598,8 +736,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/resend-otp",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "resend-otp"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "resend-otp"
+                  ]
                 }
               },
               "status": "OK",
@@ -625,8 +770,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/resend-otp",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "resend-otp"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "resend-otp"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -652,8 +804,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/resend-otp",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "resend-otp"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "resend-otp"
+                  ]
                 }
               },
               "status": "Not Found",
@@ -679,8 +838,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/resend-otp",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "resend-otp"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "resend-otp"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -706,8 +872,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/resend-otp",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "resend-otp"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "resend-otp"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -733,8 +906,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/auth/resend-otp",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "auth", "resend-otp"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "auth",
+                    "resend-otp"
+                  ]
                 }
               },
               "status": "Bad Request",
@@ -751,11 +931,11 @@
             }
           ]
         }
-      ]
+      ],
+      "description": "Modul untuk registrasi, verifikasi OTP, pengiriman ulang OTP, dan login pengguna."
     },
     {
       "name": "2. User Profile",
-      "description": "Mengelola detail profil pengguna, mengunggah foto profil, dan menonaktifkan akun.",
       "item": [
         {
           "name": "2.1 Get Profile User",
@@ -774,8 +954,15 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/api/v1/users/profile",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "users", "profile"]
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "profile"
+              ]
             },
             "description": "Mengambil informasi profil lengkap dari user yang aktif menggunakan token JWT."
           },
@@ -802,14 +989,23 @@
                 {
                   "key": "avatar",
                   "type": "file",
-                  "description": "(Wajib) File gambar foto profil (jpg, jpeg, png, gif, webp) maksimal 2MB"
+                  "description": "(Wajib) File gambar foto profil (jpg, jpeg, png, gif, webp) maksimal 2MB",
+                  "value": null
                 }
               ]
             },
             "url": {
               "raw": "{{BASE_URL}}/api/v1/users/profile/avatar",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "users", "profile", "avatar"]
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "profile",
+                "avatar"
+              ]
             },
             "description": "Mengunggah atau mengganti foto profil user secara lokal via multipart/form-data."
           },
@@ -825,8 +1021,16 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/users/profile/avatar",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "users", "profile", "avatar"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "users",
+                    "profile",
+                    "avatar"
+                  ]
                 }
               },
               "status": "OK",
@@ -852,8 +1056,16 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/users/profile/avatar",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "users", "profile", "avatar"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "users",
+                    "profile",
+                    "avatar"
+                  ]
                 }
               },
               "status": "Payload Too Large",
@@ -887,8 +1099,16 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/api/v1/users/profile/avatar",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "users", "profile", "avatar"]
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "profile",
+                "avatar"
+              ]
             },
             "description": "Menghapus foto profil dari database dan menghapus filenya secara fisik dari server."
           },
@@ -904,8 +1124,16 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/users/profile/avatar",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "users", "profile", "avatar"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "users",
+                    "profile",
+                    "avatar"
+                  ]
                 }
               },
               "status": "OK",
@@ -939,8 +1167,15 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/api/v1/users/profile",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "users", "profile"]
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "profile"
+              ]
             },
             "description": "Menonaktifkan akun user secara aman (isDeleted: true). User terhapus tidak akan bisa login kembali."
           },
@@ -956,8 +1191,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/users/profile",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "users", "profile"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "users",
+                    "profile"
+                  ]
                 }
               },
               "status": "OK",
@@ -974,11 +1216,11 @@
             }
           ]
         }
-      ]
+      ],
+      "description": "Mengelola detail profil pengguna, mengunggah foto profil, dan menonaktifkan akun."
     },
     {
       "name": "3. E-Wallet & Payments",
-      "description": "Mengelola saldo dompet digital, memicu request top-up, pembatalan top-up, dan penerimaan status webhook Midtrans.",
       "item": [
         {
           "name": "3.1 Get Wallet & History",
@@ -997,8 +1239,14 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/api/v1/wallets",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "wallets"]
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "wallets"
+              ]
             },
             "description": "Melihat saldo aktif dan seluruh riwayat mutasi wallet dari user bersangkutan."
           },
@@ -1008,14 +1256,16 @@
               "originalRequest": {
                 "method": "GET",
                 "header": [],
-                "body": {
-                  "mode": "urlencoded",
-                  "urlencoded": []
-                },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/wallets",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "wallets"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "wallets"
+                  ]
                 }
               },
               "status": "OK",
@@ -1060,8 +1310,15 @@
             },
             "url": {
               "raw": "{{BASE_URL}}/api/v1/wallets/topup",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "wallets", "topup"]
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "wallets",
+                "topup"
+              ]
             },
             "description": "Membuat transaksi top-up pending dan mendapatkan URL/Token pembayaran Snap Midtrans."
           },
@@ -1077,8 +1334,15 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/wallets/topup",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "wallets", "topup"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "wallets",
+                    "topup"
+                  ]
                 }
               },
               "status": "OK",
@@ -1112,8 +1376,17 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/api/v1/wallets/topup/:topupId/cancel",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "wallets", "topup", ":topupId", "cancel"],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "wallets",
+                "topup",
+                ":topupId",
+                "cancel"
+              ],
               "variable": [
                 {
                   "key": "topupId",
@@ -1136,7 +1409,9 @@
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/wallets/topup/:topupId/cancel",
-                  "host": ["{{BASE_URL}}"],
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
                   "path": [
                     "api",
                     "v1",
@@ -1144,6 +1419,11 @@
                     "topup",
                     ":topupId",
                     "cancel"
+                  ],
+                  "variable": [
+                    {
+                      "key": "topupId"
+                    }
                   ]
                 }
               },
@@ -1177,18 +1457,25 @@
             },
             "url": {
               "raw": "{{BASE_URL}}/api/v1/payments/webhook",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "payments", "webhook"]
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "payments",
+                "webhook"
+              ]
             },
             "description": "Endpoint publik untuk callback otomatis notifikasi pembayaran dari server Midtrans."
           },
           "response": []
         }
-      ]
+      ],
+      "description": "Mengelola saldo dompet digital, memicu request top-up, pembatalan top-up, dan penerimaan status webhook Midtrans."
     },
     {
       "name": "4. Categories",
-      "description": "Modul CRUD master data kategori hotel.",
       "item": [
         {
           "name": "4.1 Create Category",
@@ -1218,8 +1505,14 @@
             },
             "url": {
               "raw": "{{BASE_URL}}/api/v1/categories",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "categories"]
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "categories"
+              ]
             }
           },
           "response": []
@@ -1231,8 +1524,14 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/api/v1/categories",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "categories"]
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "categories"
+              ]
             }
           },
           "response": []
@@ -1265,8 +1564,15 @@
             },
             "url": {
               "raw": "{{BASE_URL}}/api/v1/categories/:id",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "categories", ":id"],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "categories",
+                ":id"
+              ],
               "variable": [
                 {
                   "key": "id",
@@ -1295,8 +1601,15 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/api/v1/categories/:id",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "categories", ":id"],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "categories",
+                ":id"
+              ],
               "variable": [
                 {
                   "key": "id",
@@ -1308,11 +1621,11 @@
           },
           "response": []
         }
-      ]
+      ],
+      "description": "Modul CRUD master data kategori hotel."
     },
     {
       "name": "5. Vouchers",
-      "description": "Modul CRUD master voucher diskon promosi.",
       "item": [
         {
           "name": "5.1 Create Voucher",
@@ -1366,8 +1679,14 @@
             },
             "url": {
               "raw": "{{BASE_URL}}/api/v1/vouchers",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "vouchers"]
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "vouchers"
+              ]
             }
           },
           "response": []
@@ -1389,8 +1708,14 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/api/v1/vouchers",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "vouchers"]
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "vouchers"
+              ]
             }
           },
           "response": []
@@ -1412,8 +1737,15 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/api/v1/vouchers/:code",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "vouchers", ":code"],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "vouchers",
+                ":code"
+              ],
               "variable": [
                 {
                   "key": "code",
@@ -1452,8 +1784,15 @@
             },
             "url": {
               "raw": "{{BASE_URL}}/api/v1/vouchers/:id",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "vouchers", ":id"],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "vouchers",
+                ":id"
+              ],
               "variable": [
                 {
                   "key": "id",
@@ -1482,8 +1821,15 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/api/v1/vouchers/:id",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "vouchers", ":id"],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "vouchers",
+                ":id"
+              ],
               "variable": [
                 {
                   "key": "id",
@@ -1495,21 +1841,1073 @@
           },
           "response": []
         }
-      ]
+      ],
+      "description": "Modul CRUD master voucher diskon promosi."
     },
     {
-      "name": "6. Hotels & Room Types",
-      "description": "Modul CRUD data hotel, tipe kamar, serta rute integrasi API Agoda eksternal.",
+      "name": "6. Hotels & Room",
       "item": [
         {
-          "name": "6.1 Create Hotel",
+          "name": "Kamar",
+          "item": [
+            {
+              "name": "Get kamar di hotel",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": []
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/hotels/6a4fde8e5394a959719ae3/rooms",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "hotels",
+                    "6a4fde8e5394a959719ae3",
+                    "rooms"
+                  ]
+                },
+                "description": "Mengambil daftar seluruh tipe kamar yang ditawarkan oleh satu properti hotel spesifik. Endpoint publik ini berguna untuk ditampilkan pada katalog pencarian pelanggan."
+              },
+              "response": [
+                {
+                  "name": "Berhasil Get kamar di hotel",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "urlencoded",
+                      "urlencoded": []
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/api/v1/hotels/6a4fde8e5394a959719ae3d2/rooms",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "hotels",
+                        "6a4fde8e5394a959719ae3d2",
+                        "rooms"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Security-Policy",
+                      "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Resource-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Origin-Agent-Cluster",
+                      "value": "?1"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "no-referrer"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-DNS-Prefetch-Control",
+                      "value": "off"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "478"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"1de-i6PL6xadD0HxHsfsXyFWICRT8+o\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Fri, 10 Jul 2026 04:10:44 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"success\": true,\n    \"message\": \"Berhasil mengambil daftar tipe kamar\",\n    \"data\": [\n        {\n            \"name\": \"Deluxe Room\",\n            \"pricePerNight\": 850000,\n            \"totalQuota\": 20,\n            \"available_quota\": 20,\n            \"capacity\": 2,\n            \"facilities\": [\n                \"Wi-Fi\",\n                \"AC\",\n                \"TV 42 Inch\",\n                \"Breakfast\"\n            ],\n            \"photos\": [],\n            \"_id\": \"6a4fde8e5394a959719ae3d3\"\n        },\n        {\n            \"name\": \"Executive Suite\",\n            \"pricePerNight\": 2000000,\n            \"totalQuota\": 5,\n            \"available_quota\": 5,\n            \"capacity\": 4,\n            \"facilities\": [\n                \"Wi-Fi\",\n                \"AC\",\n                \"Smart TV\",\n                \"Private Pool\",\n                \"Breakfast\"\n            ],\n            \"photos\": [],\n            \"_id\": \"6a4fde8e5394a959719ae3d4\"\n        }\n    ]\n}"
+                },
+                {
+                  "name": "Gagal Get kamar di hotel",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "body": {
+                      "mode": "urlencoded",
+                      "urlencoded": []
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/api/v1/hotels/6a4fde8e5394a959719ae3/rooms",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "hotels",
+                        "6a4fde8e5394a959719ae3",
+                        "rooms"
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Security-Policy",
+                      "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Resource-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Origin-Agent-Cluster",
+                      "value": "?1"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "no-referrer"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-DNS-Prefetch-Control",
+                      "value": "off"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "180"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"b4-KsfqXDBxNWpu62IDNymaIjWUHR4\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Fri, 10 Jul 2026 04:13:55 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"success\": false,\n    \"message\": \"Terjadi kesalahan pada server\",\n    \"error\": \"Cast to ObjectId failed for value \\\"6a4fde8e5394a959719ae3\\\" (type string) at path \\\"_id\\\" for model \\\"Hotel\\\"\"\n}"
+                }
+              ]
+            },
+            {
+              "name": "Update Tipe Kamar",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{auth_secret_112a}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "pricePerNight",
+                      "value": "850000",
+                      "type": "text",
+                      "uuid": "399d5a81-1675-4de5-8937-3f8520d91ac3"
+                    },
+                    {
+                      "key": "facilities",
+                      "value": "Air Panas",
+                      "type": "text",
+                      "uuid": "ddfb2ee1-e5c3-41db-ab4b-6328c867ca5c"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/hotels/6a4fde8e5394a959719ae3d2/rooms/",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "hotels",
+                    "6a4fde8e5394a959719ae3d2",
+                    "rooms",
+                    ""
+                  ]
+                },
+                "description": "Memperbarui spesifikasi tipe kamar tertentu, seperti penyesuaian harga (`pricePerNight`), mengubah kuota kamar, atau memperbarui daftar fasilitas."
+              },
+              "response": [
+                {
+                  "name": "Berhasil Update Tipe Kamar",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "urlencoded",
+                      "urlencoded": [
+                        {
+                          "key": "pricePerNight",
+                          "value": "850000",
+                          "type": "text",
+                          "uuid": "399d5a81-1675-4de5-8937-3f8520d91ac3"
+                        },
+                        {
+                          "key": "facilities",
+                          "value": "Air Panas",
+                          "type": "text",
+                          "uuid": "ddfb2ee1-e5c3-41db-ab4b-6328c867ca5c"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/api/v1/hotels/6a4fde8e5394a959719ae3d2/rooms/6a4fde8e5394a959719ae3d4",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "hotels",
+                        "6a4fde8e5394a959719ae3d2",
+                        "rooms",
+                        "6a4fde8e5394a959719ae3d4"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Security-Policy",
+                      "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Resource-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Origin-Agent-Cluster",
+                      "value": "?1"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "no-referrer"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-DNS-Prefetch-Control",
+                      "value": "off"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "237"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"ed-nl+1dWCsSCO5+/xYRSlnMnglEZo\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Fri, 10 Jul 2026 04:22:44 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"success\": true,\n    \"message\": \"Berhasil memperbarui tipe kamar\",\n    \"data\": {\n        \"name\": \"Executive Suite\",\n        \"pricePerNight\": 850000,\n        \"totalQuota\": 5,\n        \"available_quota\": 5,\n        \"capacity\": 4,\n        \"facilities\": [\n            \"Air Panas\"\n        ],\n        \"photos\": [],\n        \"_id\": \"6a4fde8e5394a959719ae3d4\"\n    }\n}"
+                },
+                {
+                  "name": "Gagal Update Tipe Kamar",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [],
+                    "body": {
+                      "mode": "urlencoded",
+                      "urlencoded": [
+                        {
+                          "key": "pricePerNight",
+                          "value": "850000",
+                          "type": "text",
+                          "uuid": "399d5a81-1675-4de5-8937-3f8520d91ac3"
+                        },
+                        {
+                          "key": "facilities",
+                          "value": "Air Panas",
+                          "type": "text",
+                          "uuid": "ddfb2ee1-e5c3-41db-ab4b-6328c867ca5c"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/api/v1/hotels/6a4fde8e5394a959719ae3d2/rooms/",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "hotels",
+                        "6a4fde8e5394a959719ae3d2",
+                        "rooms",
+                        ""
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Security-Policy",
+                      "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Resource-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Origin-Agent-Cluster",
+                      "value": "?1"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "no-referrer"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-DNS-Prefetch-Control",
+                      "value": "off"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "57"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"39-8GdYMB7WtCmOtCiqJWnF/e6WuXM\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Fri, 10 Jul 2026 04:24:21 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"success\": false,\n    \"message\": \"Route not found\",\n    \"data\": null\n}"
+                }
+              ]
+            },
+            {
+              "name": "Delete Kamar",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{auth_secret_112a}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/hotels/6a5075de2508385d9a881daf/rooms/6a5076112508385d9a881db0",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "hotels",
+                    "6a5075de2508385d9a881daf",
+                    "rooms",
+                    "6a5076112508385d9a881db0"
+                  ]
+                },
+                "description": "Menghapus satu varian tipe kamar dari dalam sistem properti hotel secara permanen. Tindakan ini akan mencabut sub-dokumen kamar dari _array_ `room_types.`"
+              },
+              "response": [
+                {
+                  "name": "Berhasil Delete Kamar",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [],
+                    "url": {
+                      "raw": "{{BASE_URL}}/api/v1/hotels/6a5075de2508385d9a881daf/rooms/6a5076112508385d9a881db0",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "hotels",
+                        "6a5075de2508385d9a881daf",
+                        "rooms",
+                        "6a5076112508385d9a881db0"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Security-Policy",
+                      "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Resource-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Origin-Agent-Cluster",
+                      "value": "?1"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "no-referrer"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-DNS-Prefetch-Control",
+                      "value": "off"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "70"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"46-/Hc0DRiHdhZGbL3YdwIUw03p8Rg\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Fri, 10 Jul 2026 04:34:21 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"success\": true,\n    \"message\": \"Berhasil menghapus tipe kamar\",\n    \"data\": null\n}"
+                }
+              ]
+            },
+            {
+              "name": "Tambah Kamar baru di hotel",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{auth_secret_112a}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "name",
+                      "value": "President Suite",
+                      "type": "text",
+                      "uuid": "e7fe5406-1806-4cf2-9960-1964b2f875d4"
+                    },
+                    {
+                      "key": "pricePerNight",
+                      "value": "5000000",
+                      "type": "text",
+                      "uuid": "e5d85ada-2635-4612-bbf9-3d659d970480"
+                    },
+                    {
+                      "key": "totalQuota",
+                      "value": "5",
+                      "type": "text",
+                      "uuid": "a7bd24d8-c239-4419-a96f-a0f059500273"
+                    },
+                    {
+                      "key": "capacity",
+                      "value": "4",
+                      "type": "text",
+                      "uuid": "eee41b6e-aaa9-44b7-80d3-3476178614cb"
+                    },
+                    {
+                      "key": "facilities",
+                      "value": "Kolam Renang Pribadi",
+                      "type": "text",
+                      "uuid": "eed08046-d464-4cd0-b0c0-5d0d84a33da2"
+                    },
+                    {
+                      "key": "facilities",
+                      "value": "Kasur",
+                      "type": "text",
+                      "uuid": "eed08046-d464-4cd0-b0c0-5d0d84a33da2"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/hotels/6a5075de2508385d9a881daf/rooms",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "hotels",
+                    "6a5075de2508385d9a881daf",
+                    "rooms"
+                  ]
+                },
+                "description": "Menambahkan tipe kamar baru (misal: Deluxe, Suite) ke dalam properti hotel tertentu sebagai sub-dokumen. Menyimpan detail harga per malam, kapasitas maksimal tamu, daftar fasilitas spesifik kamar, dan batas kuota reservasi."
+              },
+              "response": [
+                {
+                  "name": "Berhasil Tambah Kamar Baru di Hotel",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "urlencoded",
+                      "urlencoded": [
+                        {
+                          "key": "name",
+                          "value": "President Suite",
+                          "type": "text",
+                          "uuid": "e7fe5406-1806-4cf2-9960-1964b2f875d4"
+                        },
+                        {
+                          "key": "pricePerNight",
+                          "value": "5000000",
+                          "type": "text",
+                          "uuid": "e5d85ada-2635-4612-bbf9-3d659d970480"
+                        },
+                        {
+                          "key": "totalQuota",
+                          "value": "2",
+                          "type": "text",
+                          "uuid": "a7bd24d8-c239-4419-a96f-a0f059500273"
+                        },
+                        {
+                          "key": "capacity",
+                          "value": "4",
+                          "type": "text",
+                          "uuid": "eee41b6e-aaa9-44b7-80d3-3476178614cb"
+                        },
+                        {
+                          "key": "facilities",
+                          "value": "Kolam Renang Pribadi",
+                          "type": "text",
+                          "uuid": "eed08046-d464-4cd0-b0c0-5d0d84a33da2"
+                        },
+                        {
+                          "key": "facilities",
+                          "value": "Kasur",
+                          "type": "text",
+                          "uuid": "eed08046-d464-4cd0-b0c0-5d0d84a33da2"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/api/v1/hotels/6a4fedbf758ffb1cc90c37f5/rooms",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "hotels",
+                        "6a4fedbf758ffb1cc90c37f5",
+                        "rooms"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Security-Policy",
+                      "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Resource-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Origin-Agent-Cluster",
+                      "value": "?1"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "no-referrer"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-DNS-Prefetch-Control",
+                      "value": "off"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "257"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"101-6J4orYUJFSNJMt1wEwhahKI9llY\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 09 Jul 2026 19:15:58 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"success\": true,\n    \"message\": \"Berhasil menambahkan tipe kamar\",\n    \"data\": {\n        \"name\": \"President Suite\",\n        \"pricePerNight\": 5000000,\n        \"totalQuota\": 2,\n        \"available_quota\": 2,\n        \"capacity\": 4,\n        \"facilities\": [\n            \"Kolam Renang Pribadi\",\n            \"Kasur\"\n        ],\n        \"photos\": [],\n        \"_id\": \"6a4ff36e758ffb1cc90c37f8\"\n    }\n}"
+                },
+                {
+                  "name": "Gagal Tambah Kamar baru di hotel",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [],
+                    "body": {
+                      "mode": "urlencoded",
+                      "urlencoded": [
+                        {
+                          "key": "name",
+                          "value": "President Suite",
+                          "type": "text",
+                          "uuid": "e7fe5406-1806-4cf2-9960-1964b2f875d4"
+                        },
+                        {
+                          "key": "pricePerNight",
+                          "value": "5000000",
+                          "type": "text",
+                          "uuid": "e5d85ada-2635-4612-bbf9-3d659d970480"
+                        },
+                        {
+                          "key": "totalQuota",
+                          "value": "",
+                          "type": "text",
+                          "uuid": "a7bd24d8-c239-4419-a96f-a0f059500273"
+                        },
+                        {
+                          "key": "capacity",
+                          "value": "4",
+                          "type": "text",
+                          "uuid": "eee41b6e-aaa9-44b7-80d3-3476178614cb"
+                        },
+                        {
+                          "key": "facilities",
+                          "value": "Kolam Renang Pribadi",
+                          "type": "text",
+                          "uuid": "eed08046-d464-4cd0-b0c0-5d0d84a33da2"
+                        },
+                        {
+                          "key": "facilities",
+                          "value": "Kasur",
+                          "type": "text",
+                          "uuid": "eed08046-d464-4cd0-b0c0-5d0d84a33da2"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{BASE_URL}}/api/v1/hotels/6a4fedbf758ffb1cc90c37f5/rooms",
+                      "host": [
+                        "{{BASE_URL}}"
+                      ],
+                      "path": [
+                        "api",
+                        "v1",
+                        "hotels",
+                        "6a4fedbf758ffb1cc90c37f5",
+                        "rooms"
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    },
+                    {
+                      "key": "Content-Security-Policy",
+                      "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                    },
+                    {
+                      "key": "Cross-Origin-Opener-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Cross-Origin-Resource-Policy",
+                      "value": "same-origin"
+                    },
+                    {
+                      "key": "Origin-Agent-Cluster",
+                      "value": "?1"
+                    },
+                    {
+                      "key": "Referrer-Policy",
+                      "value": "no-referrer"
+                    },
+                    {
+                      "key": "Strict-Transport-Security",
+                      "value": "max-age=31536000; includeSubDomains"
+                    },
+                    {
+                      "key": "X-Content-Type-Options",
+                      "value": "nosniff"
+                    },
+                    {
+                      "key": "X-DNS-Prefetch-Control",
+                      "value": "off"
+                    },
+                    {
+                      "key": "X-Download-Options",
+                      "value": "noopen"
+                    },
+                    {
+                      "key": "X-Frame-Options",
+                      "value": "SAMEORIGIN"
+                    },
+                    {
+                      "key": "X-Permitted-Cross-Domain-Policies",
+                      "value": "none"
+                    },
+                    {
+                      "key": "X-XSS-Protection",
+                      "value": "0"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json; charset=utf-8"
+                    },
+                    {
+                      "key": "Content-Length",
+                      "value": "217"
+                    },
+                    {
+                      "key": "ETag",
+                      "value": "W/\"d9-a9m2rssgHeCMZToHm9EzPWrZiUU\""
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 09 Jul 2026 19:17:05 GMT"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "keep-alive"
+                    },
+                    {
+                      "key": "Keep-Alive",
+                      "value": "timeout=5"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"success\": false,\n    \"message\": \"Terjadi kesalahan pada server\",\n    \"error\": \"Hotel validation failed: room_types.1.totalQuota: Path `totalQuota` is required., room_types.1.available_quota: Path `available_quota` is required.\"\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TambahHotel",
           "request": {
             "auth": {
               "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{token_jwt}}",
+                  "value": "{{auth_secret_112a}}",
                   "type": "string"
                 }
               ]
@@ -1521,48 +2919,413 @@
               "urlencoded": [
                 {
                   "key": "name",
-                  "value": "Hotel Grand Melia",
+                  "value": "Hotel Baru",
                   "type": "text",
-                  "description": "(Wajib) Nama Hotel"
-                },
-                {
-                  "key": "address",
-                  "value": "Jalan Rasuna Said, Jakarta",
-                  "type": "text",
-                  "description": "(Wajib) Alamat Hotel"
+                  "uuid": "a6464fb9-f3bc-432d-937b-fbb9fe505438"
                 },
                 {
                   "key": "description",
-                  "value": "Hotel bintang 5 mewah di pusat kota",
+                  "value": "Hotel paling estetik di kota ini.",
                   "type": "text",
-                  "description": "(Wajib) Deskripsi hotel"
+                  "uuid": "c100722f-4b00-4baa-b4aa-a5ee474d9645"
+                },
+                {
+                  "key": "address",
+                  "value": "Jl. Melati no 12",
+                  "type": "text",
+                  "uuid": "14113a6a-a638-4a12-8325-23251de1571a"
+                },
+                {
+                  "key": "city",
+                  "value": "Surabaya",
+                  "type": "text",
+                  "uuid": "85429652-710d-433e-a83f-fb0c35754de1"
                 },
                 {
                   "key": "categoryId",
-                  "value": "",
+                  "value": "6a4fde8e5394a959719ae3d0",
                   "type": "text",
-                  "description": "(Wajib) ID Kategori hotel"
+                  "uuid": "3d90d1d3-ce1b-4493-b9e7-4f7944ec2948"
+                },
+                {
+                  "key": "isFeatured",
+                  "value": "true",
+                  "type": "text",
+                  "uuid": "c13142ec-4111-4952-a80d-32d530f35255"
                 }
               ]
             },
             "url": {
               "raw": "{{BASE_URL}}/api/v1/hotels",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "hotels"]
-            }
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "hotels"
+              ]
+            },
+            "description": "Endpoint ini digunakan untuk mendaftarkan properti hotel baru ke dalam sistem. Wajib menyertakan `categoryId` yang valid dari master kategori. Hanya dapat diakses oleh role Admin atau Hotel Manager. Data yang dibuat akan otomatis terikat dengan `ownerId` dari token pengguna yang sedang login."
           },
-          "response": []
+          "response": [
+            {
+              "name": "Berhasil TambahHotel",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "name",
+                      "value": "Hotel Bintang Kejora",
+                      "type": "text",
+                      "uuid": "a6464fb9-f3bc-432d-937b-fbb9fe505438"
+                    },
+                    {
+                      "key": "description",
+                      "value": "Hotel paling estetik di kota ini.",
+                      "type": "text",
+                      "uuid": "c100722f-4b00-4baa-b4aa-a5ee474d9645"
+                    },
+                    {
+                      "key": "address",
+                      "value": "Jl. Mawar No. 99",
+                      "type": "text",
+                      "uuid": "14113a6a-a638-4a12-8325-23251de1571a"
+                    },
+                    {
+                      "key": "city",
+                      "value": "Bandung",
+                      "type": "text",
+                      "uuid": "85429652-710d-433e-a83f-fb0c35754de1"
+                    },
+                    {
+                      "key": "categoryId",
+                      "value": "6a4fde8e5394a959719ae3d0",
+                      "type": "text",
+                      "uuid": "3d90d1d3-ce1b-4493-b9e7-4f7944ec2948"
+                    },
+                    {
+                      "key": "isFeatured",
+                      "value": "true",
+                      "type": "text",
+                      "uuid": "c13142ec-4111-4952-a80d-32d530f35255"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/hotels",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "hotels"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Resource-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Origin-Agent-Cluster",
+                  "value": "?1"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "no-referrer"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-DNS-Prefetch-Control",
+                  "value": "off"
+                },
+                {
+                  "key": "X-Download-Options",
+                  "value": "noopen"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Permitted-Cross-Domain-Policies",
+                  "value": "none"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "495"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1ef-obBu0H0+PybIxGE/GP73orjGsmw\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Jul 2026 18:51:43 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Berhasil membuat data hotel\",\n    \"data\": {\n        \"name\": \"Hotel Bintang Kejora\",\n        \"description\": \"Hotel paling estetik di kota ini.\",\n        \"address\": \"Jl. Mawar No. 99\",\n        \"city\": \"Bandung\",\n        \"categoryId\": \"6a4fde8e5394a959719ae3d0\",\n        \"ownerId\": \"6a4fde8e5394a959719ae3ce\",\n        \"photos\": [],\n        \"rating\": 0,\n        \"reviewCount\": 0,\n        \"isFeatured\": true,\n        \"isDeleted\": false,\n        \"deletedAt\": null,\n        \"_id\": \"6a4fedbf758ffb1cc90c37f5\",\n        \"room_types\": [],\n        \"createdAt\": \"2026-07-09T18:51:43.982Z\",\n        \"updatedAt\": \"2026-07-09T18:51:43.982Z\",\n        \"__v\": 0\n    }\n}"
+            },
+            {
+              "name": "Gagal TambahHotel",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "name",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "a6464fb9-f3bc-432d-937b-fbb9fe505438"
+                    },
+                    {
+                      "key": "description",
+                      "value": "Hotel paling estetik di kota ini.",
+                      "type": "text",
+                      "uuid": "c100722f-4b00-4baa-b4aa-a5ee474d9645"
+                    },
+                    {
+                      "key": "address",
+                      "value": "Jl. Mawar No. 99",
+                      "type": "text",
+                      "uuid": "14113a6a-a638-4a12-8325-23251de1571a"
+                    },
+                    {
+                      "key": "city",
+                      "value": "Bandung",
+                      "type": "text",
+                      "uuid": "85429652-710d-433e-a83f-fb0c35754de1"
+                    },
+                    {
+                      "key": "categoryId",
+                      "value": "6a4fde8e5394a959719ae3d0",
+                      "type": "text",
+                      "uuid": "3d90d1d3-ce1b-4493-b9e7-4f7944ec2948"
+                    },
+                    {
+                      "key": "isFeatured",
+                      "value": "true",
+                      "type": "text",
+                      "uuid": "c13142ec-4111-4952-a80d-32d530f35255"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/hotels",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "hotels"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Resource-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Origin-Agent-Cluster",
+                  "value": "?1"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "no-referrer"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-DNS-Prefetch-Control",
+                  "value": "off"
+                },
+                {
+                  "key": "X-Download-Options",
+                  "value": "noopen"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Permitted-Cross-Domain-Policies",
+                  "value": "none"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "88"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"58-+8G1QVA4bTurjhkE8KWQp0sqc4w\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Jul 2026 18:53:40 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": false,\n    \"message\": \"Nama, alamat, kota, dan categoryId wajib diisi\",\n    \"data\": null\n}"
+            }
+          ]
         },
         {
-          "name": "6.2 Get All Hotels",
+          "name": "Lihat Semua Hotel",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_secret_112a}}",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "GET",
             "header": [],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "name",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "a6464fb9-f3bc-432d-937b-fbb9fe505438"
+                },
+                {
+                  "key": "description",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "c100722f-4b00-4baa-b4aa-a5ee474d9645"
+                },
+                {
+                  "key": "address",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "14113a6a-a638-4a12-8325-23251de1571a"
+                },
+                {
+                  "key": "city",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "85429652-710d-433e-a83f-fb0c35754de1"
+                },
+                {
+                  "key": "categoryId",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "3d90d1d3-ce1b-4493-b9e7-4f7944ec2948"
+                },
+                {
+                  "key": "isFeatured",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "c13142ec-4111-4952-a80d-32d530f35255"
+                }
+              ]
+            },
             "url": {
-              "raw": "{{BASE_URL}}/api/v1/hotels",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "hotels"]
-            }
+              "raw": "{{BASE_URL}}/api/v1/hotelss",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "hotelss"
+              ]
+            },
+            "description": "Mengambil daftar seluruh properti hotel yang aktif di sistem. Endpoint ini bersifat publik. Data yang dikembalikan sudah memfilter hotel yang berstatus dihapus (menggunakan sistem _Soft Delete_ `isDeleted: false`) dan melakukan _populate_ pada detail kategori dan pemilik."
           },
           "response": [
             {
@@ -1572,233 +3335,656 @@
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": []
+                  "urlencoded": [
+                    {
+                      "key": "name",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "a6464fb9-f3bc-432d-937b-fbb9fe505438"
+                    },
+                    {
+                      "key": "description",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "c100722f-4b00-4baa-b4aa-a5ee474d9645"
+                    },
+                    {
+                      "key": "address",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "14113a6a-a638-4a12-8325-23251de1571a"
+                    },
+                    {
+                      "key": "city",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "85429652-710d-433e-a83f-fb0c35754de1"
+                    },
+                    {
+                      "key": "categoryId",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "3d90d1d3-ce1b-4493-b9e7-4f7944ec2948"
+                    },
+                    {
+                      "key": "isFeatured",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "c13142ec-4111-4952-a80d-32d530f35255"
+                    }
+                  ]
                 },
                 "url": {
                   "raw": "{{BASE_URL}}/api/v1/hotels",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "hotels"]
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "hotels"
+                  ]
                 }
               },
               "status": "OK",
               "code": 200,
-              "_postman_previewlanguage": "json",
+              "_postman_previewlanguage": null,
               "header": [
                 {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Resource-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Origin-Agent-Cluster",
+                  "value": "?1"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "no-referrer"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-DNS-Prefetch-Control",
+                  "value": "off"
+                },
+                {
+                  "key": "X-Download-Options",
+                  "value": "noopen"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Permitted-Cross-Domain-Policies",
+                  "value": "none"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
                   "key": "Content-Type",
-                  "value": "application/json"
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1546"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"60a-+OjIBsfg/v1+mLqyQB2S8iyW2OY\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Jul 2026 18:56:39 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
                 }
               ],
               "cookie": [],
-              "body": "{\n  \"success\": true,\n  \"message\": \"Berhasil mengambil daftar hotel\",\n  \"data\": [\n    {\n      \"_id\": \"6a4fde8e5394a959719ae3d2\",\n      \"name\": \"Grand Ambarrukmo Resort\",\n      \"description\": \"Resort bintang 5 dengan pemandangan indah dan fasilitas lengkap.\",\n      \"address\": \"Jl. Laksda Adisucipto No. 82\",\n      \"city\": \"Yogyakarta\",\n      \"categoryId\": {\n        \"_id\": \"6a4fde8e5394a959719ae3d0\",\n        \"name\": \"Resort\"\n      },\n      \"ownerId\": {\n        \"_id\": \"6a4fde8e5394a959719ae3cf\",\n        \"name\": \"Budi Manajer\",\n        \"email\": \"manager@hotel.com\"\n      }\n    }\n  ]\n}"
+              "body": "{\n    \"success\": true,\n    \"message\": \"Berhasil mengambil daftar hotel\",\n    \"data\": [\n        {\n            \"_id\": \"6a4fde8e5394a959719ae3d2\",\n            \"name\": \"Grand Ambarrukmo Resort\",\n            \"description\": \"Resort bintang 5 dengan pemandangan indah dan fasilitas lengkap.\",\n            \"address\": \"Jl. Laksda Adisucipto No. 82\",\n            \"city\": \"Yogyakarta\",\n            \"categoryId\": {\n                \"_id\": \"6a4fde8e5394a959719ae3d0\",\n                \"name\": \"Resort\"\n            },\n            \"ownerId\": {\n                \"_id\": \"6a4fde8e5394a959719ae3cf\",\n                \"name\": \"Budi Manajer\",\n                \"email\": \"manager@hotel.com\"\n            },\n            \"photos\": [],\n            \"rating\": 0,\n            \"reviewCount\": 0,\n            \"isFeatured\": true,\n            \"room_types\": [\n                {\n                    \"name\": \"Deluxe Room\",\n                    \"pricePerNight\": 850000,\n                    \"totalQuota\": 20,\n                    \"available_quota\": 20,\n                    \"capacity\": 2,\n                    \"facilities\": [\n                        \"Wi-Fi\",\n                        \"AC\",\n                        \"TV 42 Inch\",\n                        \"Breakfast\"\n                    ],\n                    \"photos\": [],\n                    \"_id\": \"6a4fde8e5394a959719ae3d3\"\n                },\n                {\n                    \"name\": \"Executive Suite\",\n                    \"pricePerNight\": 2000000,\n                    \"totalQuota\": 5,\n                    \"available_quota\": 5,\n                    \"capacity\": 4,\n                    \"facilities\": [\n                        \"Wi-Fi\",\n                        \"AC\",\n                        \"Smart TV\",\n                        \"Private Pool\",\n                        \"Breakfast\"\n                    ],\n                    \"photos\": [],\n                    \"_id\": \"6a4fde8e5394a959719ae3d4\"\n                }\n            ],\n            \"isDeleted\": false,\n            \"deletedAt\": null,\n            \"createdAt\": \"2026-07-09T17:46:54.538Z\",\n            \"updatedAt\": \"2026-07-09T17:46:54.538Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6a4fedbf758ffb1cc90c37f5\",\n            \"name\": \"Hotel Bintang Kejora\",\n            \"description\": \"Hotel paling estetik di kota ini.\",\n            \"address\": \"Jl. Mawar No. 99\",\n            \"city\": \"Bandung\",\n            \"categoryId\": {\n                \"_id\": \"6a4fde8e5394a959719ae3d0\",\n                \"name\": \"Resort\"\n            },\n            \"ownerId\": {\n                \"_id\": \"6a4fde8e5394a959719ae3ce\",\n                \"name\": \"Super Admin\",\n                \"email\": \"admin@hotel.com\"\n            },\n            \"photos\": [],\n            \"rating\": 0,\n            \"reviewCount\": 0,\n            \"isFeatured\": true,\n            \"isDeleted\": false,\n            \"deletedAt\": null,\n            \"room_types\": [],\n            \"createdAt\": \"2026-07-09T18:51:43.982Z\",\n            \"updatedAt\": \"2026-07-09T18:51:43.982Z\",\n            \"__v\": 0\n        }\n    ]\n}"
             },
             {
-              "name": "Gagal Lihat Semua Hotel - Kosong",
+              "name": "Gagal Lihat Semua Hotel",
               "originalRequest": {
                 "method": "GET",
                 "header": [],
                 "body": {
                   "mode": "urlencoded",
-                  "urlencoded": []
+                  "urlencoded": [
+                    {
+                      "key": "name",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "a6464fb9-f3bc-432d-937b-fbb9fe505438"
+                    },
+                    {
+                      "key": "description",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "c100722f-4b00-4baa-b4aa-a5ee474d9645"
+                    },
+                    {
+                      "key": "address",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "14113a6a-a638-4a12-8325-23251de1571a"
+                    },
+                    {
+                      "key": "city",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "85429652-710d-433e-a83f-fb0c35754de1"
+                    },
+                    {
+                      "key": "categoryId",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "3d90d1d3-ce1b-4493-b9e7-4f7944ec2948"
+                    },
+                    {
+                      "key": "isFeatured",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "c13142ec-4111-4952-a80d-32d530f35255"
+                    }
+                  ]
                 },
                 "url": {
-                  "raw": "{{BASE_URL}}/api/v1/hotels",
-                  "host": ["{{BASE_URL}}"],
-                  "path": ["api", "v1", "hotels"]
+                  "raw": "{{BASE_URL}}/api/v1/hotelss",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "hotelss"
+                  ]
                 }
               },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json",
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
               "header": [
                 {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Resource-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Origin-Agent-Cluster",
+                  "value": "?1"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "no-referrer"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-DNS-Prefetch-Control",
+                  "value": "off"
+                },
+                {
+                  "key": "X-Download-Options",
+                  "value": "noopen"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Permitted-Cross-Domain-Policies",
+                  "value": "none"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
                   "key": "Content-Type",
-                  "value": "application/json"
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "57"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"39-8GdYMB7WtCmOtCiqJWnF/e6WuXM\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Jul 2026 18:57:33 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
                 }
               ],
               "cookie": [],
-              "body": "{\n  \"success\": true,\n  \"message\": \"Daftar hotel kosong\",\n  \"data\": []\n}"
+              "body": "{\n    \"success\": false,\n    \"message\": \"Route not found\",\n    \"data\": null\n}"
             }
           ]
         },
         {
-          "name": "6.3 Get Hotel Details by ID",
+          "name": "melihat satu Hotel",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
           "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_secret_112a}}",
+                  "type": "string"
+                }
+              ]
+            },
             "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{BASE_URL}}/api/v1/hotels/:id",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "hotels", ":id"],
-              "variable": [
-                {
-                  "key": "id",
-                  "value": "",
-                  "description": "ID Hotel lokal"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "6.4 Update Hotel Details",
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": [
-                {
-                  "key": "token",
-                  "value": "{{token_jwt}}",
-                  "type": "string"
-                }
-              ]
-            },
-            "method": "PUT",
-            "header": [],
-            "body": {
-              "mode": "urlencoded",
-              "urlencoded": [
-                {
-                  "key": "description",
-                  "value": "Deskripsi hotel yang diperbarui",
-                  "type": "text"
-                }
-              ]
-            },
-            "url": {
-              "raw": "{{BASE_URL}}/api/v1/hotels/:id",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "hotels", ":id"],
-              "variable": [
-                {
-                  "key": "id",
-                  "value": "",
-                  "description": "ID Hotel lokal"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "6.5 Delete Hotel",
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": [
-                {
-                  "key": "token",
-                  "value": "{{token_jwt}}",
-                  "type": "string"
-                }
-              ]
-            },
-            "method": "DELETE",
-            "header": [],
-            "url": {
-              "raw": "{{BASE_URL}}/api/v1/hotels/:id",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "hotels", ":id"],
-              "variable": [
-                {
-                  "key": "id",
-                  "value": "",
-                  "description": "ID Hotel lokal"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "6.6 Add Room Type",
-          "request": {
-            "auth": {
-              "type": "bearer",
-              "bearer": [
-                {
-                  "key": "token",
-                  "value": "{{token_jwt}}",
-                  "type": "string"
-                }
-              ]
-            },
-            "method": "POST",
             "header": [],
             "body": {
               "mode": "urlencoded",
               "urlencoded": [
                 {
                   "key": "name",
-                  "value": "Deluxe King Room",
+                  "value": "",
                   "type": "text",
-                  "description": "(Wajib) Nama tipe kamar"
+                  "uuid": "a6464fb9-f3bc-432d-937b-fbb9fe505438"
                 },
                 {
-                  "key": "price",
-                  "value": "750000",
+                  "key": "description",
+                  "value": "",
                   "type": "text",
-                  "description": "(Wajib) Harga per malam"
+                  "uuid": "c100722f-4b00-4baa-b4aa-a5ee474d9645"
                 },
                 {
-                  "key": "capacity",
-                  "value": "2",
+                  "key": "address",
+                  "value": "",
                   "type": "text",
-                  "description": "(Wajib) Kapasitas orang"
+                  "uuid": "14113a6a-a638-4a12-8325-23251de1571a"
                 },
                 {
-                  "key": "quota",
-                  "value": "10",
+                  "key": "city",
+                  "value": "",
                   "type": "text",
-                  "description": "(Wajib) Jumlah kamar tersedia"
+                  "uuid": "85429652-710d-433e-a83f-fb0c35754de1"
+                },
+                {
+                  "key": "categoryId",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "3d90d1d3-ce1b-4493-b9e7-4f7944ec2948"
+                },
+                {
+                  "key": "isFeatured",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "c13142ec-4111-4952-a80d-32d530f35255"
                 }
               ]
             },
             "url": {
-              "raw": "{{BASE_URL}}/api/v1/hotels/:hotelId/rooms",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "hotels", ":hotelId", "rooms"],
-              "variable": [
-                {
-                  "key": "hotelId",
-                  "value": "",
-                  "description": "ID Hotel tempat kamar didaftarkan"
-                }
+              "raw": "{{BASE_URL}}/api/v1/hotels/6a4fedbf758ffb1cc90c37f5",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "hotels",
+                "6a4fedbf758ffb1cc90c37f5"
               ]
-            }
+            },
+            "description": "Mengambil rincian informasi lengkap dari satu properti hotel spesifik berdasarkan `id` hotel (MongoDB ObjectId). Endpoint ini bersifat publik dan mengembalikan data fasilitas dasar beserta daftar kamar yang tersedia.EndFragment"
           },
-          "response": []
+          "response": [
+            {
+              "name": "Berhasil melihat satu Hotel",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "name",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "a6464fb9-f3bc-432d-937b-fbb9fe505438"
+                    },
+                    {
+                      "key": "description",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "c100722f-4b00-4baa-b4aa-a5ee474d9645"
+                    },
+                    {
+                      "key": "address",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "14113a6a-a638-4a12-8325-23251de1571a"
+                    },
+                    {
+                      "key": "city",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "85429652-710d-433e-a83f-fb0c35754de1"
+                    },
+                    {
+                      "key": "categoryId",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "3d90d1d3-ce1b-4493-b9e7-4f7944ec2948"
+                    },
+                    {
+                      "key": "isFeatured",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "c13142ec-4111-4952-a80d-32d530f35255"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/hotels/6a4fedbf758ffb1cc90c37f5",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "hotels",
+                    "6a4fedbf758ffb1cc90c37f5"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Resource-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Origin-Agent-Cluster",
+                  "value": "?1"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "no-referrer"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-DNS-Prefetch-Control",
+                  "value": "off"
+                },
+                {
+                  "key": "X-Download-Options",
+                  "value": "noopen"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Permitted-Cross-Domain-Policies",
+                  "value": "none"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "578"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"242-VwvUQES4esUIqERzuaw4Eihe9cQ\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Jul 2026 19:00:13 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Berhasil mengambil detail hotel\",\n    \"data\": {\n        \"_id\": \"6a4fedbf758ffb1cc90c37f5\",\n        \"name\": \"Hotel Bintang Kejora\",\n        \"description\": \"Hotel paling estetik di kota ini.\",\n        \"address\": \"Jl. Mawar No. 99\",\n        \"city\": \"Bandung\",\n        \"categoryId\": {\n            \"_id\": \"6a4fde8e5394a959719ae3d0\",\n            \"name\": \"Resort\"\n        },\n        \"ownerId\": {\n            \"_id\": \"6a4fde8e5394a959719ae3ce\",\n            \"name\": \"Super Admin\",\n            \"email\": \"admin@hotel.com\"\n        },\n        \"photos\": [],\n        \"rating\": 0,\n        \"reviewCount\": 0,\n        \"isFeatured\": true,\n        \"isDeleted\": false,\n        \"deletedAt\": null,\n        \"room_types\": [],\n        \"createdAt\": \"2026-07-09T18:51:43.982Z\",\n        \"updatedAt\": \"2026-07-09T18:51:43.982Z\",\n        \"__v\": 0\n    }\n}"
+            },
+            {
+              "name": "Gagal melihat satu Hotel",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "name",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "a6464fb9-f3bc-432d-937b-fbb9fe505438"
+                    },
+                    {
+                      "key": "description",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "c100722f-4b00-4baa-b4aa-a5ee474d9645"
+                    },
+                    {
+                      "key": "address",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "14113a6a-a638-4a12-8325-23251de1571a"
+                    },
+                    {
+                      "key": "city",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "85429652-710d-433e-a83f-fb0c35754de1"
+                    },
+                    {
+                      "key": "categoryId",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "3d90d1d3-ce1b-4493-b9e7-4f7944ec2948"
+                    },
+                    {
+                      "key": "isFeatured",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "c13142ec-4111-4952-a80d-32d530f35255"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/hotels/6a4fedbf758ffb1cc90c37f5P",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "hotels",
+                    "6a4fedbf758ffb1cc90c37f5P"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Resource-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Origin-Agent-Cluster",
+                  "value": "?1"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "no-referrer"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-DNS-Prefetch-Control",
+                  "value": "off"
+                },
+                {
+                  "key": "X-Download-Options",
+                  "value": "noopen"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Permitted-Cross-Domain-Policies",
+                  "value": "none"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "183"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"b7-3CeqgWcn1KfpSe1B2t9tx7bouW4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Jul 2026 19:01:35 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": false,\n    \"message\": \"Terjadi kesalahan pada server\",\n    \"error\": \"Cast to ObjectId failed for value \\\"6a4fedbf758ffb1cc90c37f5P\\\" (type string) at path \\\"_id\\\" for model \\\"Hotel\\\"\"\n}"
+            }
+          ]
         },
         {
-          "name": "6.7 Get Hotel Room Types",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{BASE_URL}}/api/v1/hotels/:hotelId/rooms",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "hotels", ":hotelId", "rooms"],
-              "variable": [
-                {
-                  "key": "hotelId",
-                  "value": "",
-                  "description": "ID Hotel"
-                }
-              ]
-            }
-          },
-          "response": []
-        },
-        {
-          "name": "6.8 Update Room Type",
+          "name": "Ubah Data Hotel",
           "request": {
             "auth": {
               "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{token_jwt}}",
+                  "value": "{{auth_secret_112a}}",
                   "type": "string"
                 }
               ]
@@ -1809,117 +3995,722 @@
               "mode": "urlencoded",
               "urlencoded": [
                 {
-                  "key": "price",
-                  "value": "850000",
-                  "type": "text"
+                  "key": "name",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "a6464fb9-f3bc-432d-937b-fbb9fe505438",
+                  "disabled": true
+                },
+                {
+                  "key": "description",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "c100722f-4b00-4baa-b4aa-a5ee474d9645",
+                  "disabled": true
+                },
+                {
+                  "key": "address",
+                  "value": "Jl. Sudirman No. 1",
+                  "type": "text",
+                  "uuid": "14113a6a-a638-4a12-8325-23251de1571a"
+                },
+                {
+                  "key": "city",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "85429652-710d-433e-a83f-fb0c35754de1"
+                },
+                {
+                  "key": "categoryId",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "3d90d1d3-ce1b-4493-b9e7-4f7944ec2948",
+                  "disabled": true
+                },
+                {
+                  "key": "isFeatured",
+                  "value": "",
+                  "type": "text",
+                  "uuid": "c13142ec-4111-4952-a80d-32d530f35255",
+                  "disabled": true
                 }
               ]
             },
             "url": {
-              "raw": "{{BASE_URL}}/api/v1/hotels/:hotelId/rooms/:roomId",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "hotels", ":hotelId", "rooms", ":roomId"],
-              "variable": [
+              "raw": "{{BASE_URL}}/api/v1/hotels/6a4fedbf758ffb1cc90c37f5",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "hotels",
+                "6a4fedbf758ffb1cc90c37f5"
+              ]
+            },
+            "description": "Memperbarui detail informasi hotel (seperti nama, alamat, kota, atau status featured). Hanya pemilik hotel (Hotel Manager terkait) atau Admin yang diizinkan melakukan pembaruan data pada endpoint ini."
+          },
+          "response": [
+            {
+              "name": "Berhasil Ubah Data Hotel",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "name",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "a6464fb9-f3bc-432d-937b-fbb9fe505438",
+                      "disabled": true
+                    },
+                    {
+                      "key": "description",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "c100722f-4b00-4baa-b4aa-a5ee474d9645",
+                      "disabled": true
+                    },
+                    {
+                      "key": "address",
+                      "value": "Jl. Sudirman No. 1",
+                      "type": "text",
+                      "uuid": "14113a6a-a638-4a12-8325-23251de1571a"
+                    },
+                    {
+                      "key": "city",
+                      "value": "Jakarta",
+                      "type": "text",
+                      "uuid": "85429652-710d-433e-a83f-fb0c35754de1"
+                    },
+                    {
+                      "key": "categoryId",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "3d90d1d3-ce1b-4493-b9e7-4f7944ec2948",
+                      "disabled": true
+                    },
+                    {
+                      "key": "isFeatured",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "c13142ec-4111-4952-a80d-32d530f35255",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/hotels/6a4fedbf758ffb1cc90c37f5",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "hotels",
+                    "6a4fedbf758ffb1cc90c37f5"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
                 {
-                  "key": "hotelId",
-                  "value": "",
-                  "description": "ID Hotel"
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
                 },
                 {
-                  "key": "roomId",
-                  "value": "",
-                  "description": "ID Tipe Kamar"
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Resource-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Origin-Agent-Cluster",
+                  "value": "?1"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "no-referrer"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-DNS-Prefetch-Control",
+                  "value": "off"
+                },
+                {
+                  "key": "X-Download-Options",
+                  "value": "noopen"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Permitted-Cross-Domain-Policies",
+                  "value": "none"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "501"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1f5-znuuHuTtSlavlJ6cBuaZroo089c\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Jul 2026 19:08:16 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
                 }
-              ]
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Berhasil memperbarui data hotel\",\n    \"data\": {\n        \"_id\": \"6a4fedbf758ffb1cc90c37f5\",\n        \"name\": \"Hotel Bintang Kejora\",\n        \"description\": \"Hotel paling estetik di kota ini.\",\n        \"address\": \"Jl. Sudirman No. 1\",\n        \"city\": \"Jakarta\",\n        \"categoryId\": \"6a4fde8e5394a959719ae3d0\",\n        \"ownerId\": \"6a4fde8e5394a959719ae3ce\",\n        \"photos\": [],\n        \"rating\": 0,\n        \"reviewCount\": 0,\n        \"isFeatured\": true,\n        \"isDeleted\": false,\n        \"deletedAt\": null,\n        \"room_types\": [],\n        \"createdAt\": \"2026-07-09T18:51:43.982Z\",\n        \"updatedAt\": \"2026-07-09T19:08:16.214Z\",\n        \"__v\": 0\n    }\n}"
+            },
+            {
+              "name": "Gagal Ubah Data Hotel",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "name",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "a6464fb9-f3bc-432d-937b-fbb9fe505438",
+                      "disabled": true
+                    },
+                    {
+                      "key": "description",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "c100722f-4b00-4baa-b4aa-a5ee474d9645",
+                      "disabled": true
+                    },
+                    {
+                      "key": "address",
+                      "value": "Jl. Sudirman No. 1",
+                      "type": "text",
+                      "uuid": "14113a6a-a638-4a12-8325-23251de1571a"
+                    },
+                    {
+                      "key": "city",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "85429652-710d-433e-a83f-fb0c35754de1"
+                    },
+                    {
+                      "key": "categoryId",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "3d90d1d3-ce1b-4493-b9e7-4f7944ec2948",
+                      "disabled": true
+                    },
+                    {
+                      "key": "isFeatured",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "c13142ec-4111-4952-a80d-32d530f35255",
+                      "disabled": true
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/hotels/6a4fedbf758ffb1cc90c37f5",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "hotels",
+                    "6a4fedbf758ffb1cc90c37f5"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Resource-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Origin-Agent-Cluster",
+                  "value": "?1"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "no-referrer"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-DNS-Prefetch-Control",
+                  "value": "off"
+                },
+                {
+                  "key": "X-Download-Options",
+                  "value": "noopen"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Permitted-Cross-Domain-Policies",
+                  "value": "none"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "119"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"77-KElI8XFQZGp1crhymB/Wtge0/Qc\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Jul 2026 19:09:51 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": false,\n    \"message\": \"Terjadi kesalahan pada server\",\n    \"error\": \"Validation failed: city: Path `city` is required.\"\n}"
             }
-          },
-          "response": []
+          ]
         },
         {
-          "name": "6.9 Delete Room Type",
+          "name": "Hapus hotel",
           "request": {
             "auth": {
               "type": "bearer",
               "bearer": [
                 {
                   "key": "token",
-                  "value": "{{token_jwt}}",
+                  "value": "{{auth_secret_112a}}",
                   "type": "string"
                 }
               ]
             },
             "method": "DELETE",
             "header": [],
-            "url": {
-              "raw": "{{BASE_URL}}/api/v1/hotels/:hotelId/rooms/:roomId",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "hotels", ":hotelId", "rooms", ":roomId"],
-              "variable": [
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
                 {
-                  "key": "hotelId",
-                  "value": "",
-                  "description": "ID Hotel"
+                  "key": "name",
+                  "value": "President Suite",
+                  "type": "text",
+                  "uuid": "e7fe5406-1806-4cf2-9960-1964b2f875d4"
                 },
                 {
-                  "key": "roomId",
+                  "key": "pricePerNight",
+                  "value": "5000000",
+                  "type": "text",
+                  "uuid": "e5d85ada-2635-4612-bbf9-3d659d970480"
+                },
+                {
+                  "key": "totalQuota",
                   "value": "",
-                  "description": "ID Tipe Kamar"
+                  "type": "text",
+                  "uuid": "a7bd24d8-c239-4419-a96f-a0f059500273"
+                },
+                {
+                  "key": "capacity",
+                  "value": "4",
+                  "type": "text",
+                  "uuid": "eee41b6e-aaa9-44b7-80d3-3476178614cb"
+                },
+                {
+                  "key": "facilities",
+                  "value": "Kolam Renang Pribadi",
+                  "type": "text",
+                  "uuid": "eed08046-d464-4cd0-b0c0-5d0d84a33da2"
+                },
+                {
+                  "key": "facilities",
+                  "value": "Kasur",
+                  "type": "text",
+                  "uuid": "eed08046-d464-4cd0-b0c0-5d0d84a33da2"
                 }
               ]
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/hotels/6a4fedbf758ffb1cc90c37f5",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "hotels",
+                "6a4fedbf758ffb1cc90c37f5"
+              ]
+            },
+            "description": "Menonaktifkan data hotel dari sistem. Endpoint ini menerapkan mekanisme _Soft Delete_ (mengubah status `isDeleted` menjadi true dan mencatat `deletedAt`), sehingga integritas data pada riwayat transaksi (_booking_) pelanggan sebelumnya tetap terjaga dengan aman."
+          },
+          "response": [
+            {
+              "name": "Gagal menghapus hotel",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "name",
+                      "value": "President Suite",
+                      "type": "text",
+                      "uuid": "e7fe5406-1806-4cf2-9960-1964b2f875d4"
+                    },
+                    {
+                      "key": "pricePerNight",
+                      "value": "5000000",
+                      "type": "text",
+                      "uuid": "e5d85ada-2635-4612-bbf9-3d659d970480"
+                    },
+                    {
+                      "key": "totalQuota",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "a7bd24d8-c239-4419-a96f-a0f059500273"
+                    },
+                    {
+                      "key": "capacity",
+                      "value": "4",
+                      "type": "text",
+                      "uuid": "eee41b6e-aaa9-44b7-80d3-3476178614cb"
+                    },
+                    {
+                      "key": "facilities",
+                      "value": "Kolam Renang Pribadi",
+                      "type": "text",
+                      "uuid": "eed08046-d464-4cd0-b0c0-5d0d84a33da2"
+                    },
+                    {
+                      "key": "facilities",
+                      "value": "Kasur",
+                      "type": "text",
+                      "uuid": "eed08046-d464-4cd0-b0c0-5d0d84a33da2"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/hotels/",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "hotels",
+                    ""
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Resource-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Origin-Agent-Cluster",
+                  "value": "?1"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "no-referrer"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-DNS-Prefetch-Control",
+                  "value": "off"
+                },
+                {
+                  "key": "X-Download-Options",
+                  "value": "noopen"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Permitted-Cross-Domain-Policies",
+                  "value": "none"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "57"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"39-8GdYMB7WtCmOtCiqJWnF/e6WuXM\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Jul 2026 19:19:35 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": false,\n    \"message\": \"Route not found\",\n    \"data\": null\n}"
+            },
+            {
+              "name": "Berhasil menghapus hotel",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "name",
+                      "value": "President Suite",
+                      "type": "text",
+                      "uuid": "e7fe5406-1806-4cf2-9960-1964b2f875d4"
+                    },
+                    {
+                      "key": "pricePerNight",
+                      "value": "5000000",
+                      "type": "text",
+                      "uuid": "e5d85ada-2635-4612-bbf9-3d659d970480"
+                    },
+                    {
+                      "key": "totalQuota",
+                      "value": "",
+                      "type": "text",
+                      "uuid": "a7bd24d8-c239-4419-a96f-a0f059500273"
+                    },
+                    {
+                      "key": "capacity",
+                      "value": "4",
+                      "type": "text",
+                      "uuid": "eee41b6e-aaa9-44b7-80d3-3476178614cb"
+                    },
+                    {
+                      "key": "facilities",
+                      "value": "Kolam Renang Pribadi",
+                      "type": "text",
+                      "uuid": "eed08046-d464-4cd0-b0c0-5d0d84a33da2"
+                    },
+                    {
+                      "key": "facilities",
+                      "value": "Kasur",
+                      "type": "text",
+                      "uuid": "eed08046-d464-4cd0-b0c0-5d0d84a33da2"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{BASE_URL}}/api/v1/hotels/6a4fedbf758ffb1cc90c37f5",
+                  "host": [
+                    "{{BASE_URL}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "hotels",
+                    "6a4fedbf758ffb1cc90c37f5"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                },
+                {
+                  "key": "Content-Security-Policy",
+                  "value": "default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Resource-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Origin-Agent-Cluster",
+                  "value": "?1"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "no-referrer"
+                },
+                {
+                  "key": "Strict-Transport-Security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "X-DNS-Prefetch-Control",
+                  "value": "off"
+                },
+                {
+                  "key": "X-Download-Options",
+                  "value": "noopen"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "SAMEORIGIN"
+                },
+                {
+                  "key": "X-Permitted-Cross-Domain-Policies",
+                  "value": "none"
+                },
+                {
+                  "key": "X-XSS-Protection",
+                  "value": "0"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "65"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"41-ouFvp4oCVuA2lBxbc91EonxNR4E\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 09 Jul 2026 19:20:04 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Berhasil menghapus hotel\",\n    \"data\": null\n}"
             }
-          },
-          "response": []
-        },
-        {
-          "name": "6.10 Get External Hotel Details (Agoda API)",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{BASE_URL}}/api/v1/hotels/external/details?propertyId=9062231",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "hotels", "external", "details"],
-              "query": [
-                {
-                  "key": "propertyId",
-                  "value": "9062231",
-                  "description": "(Wajib) ID properti hotel dari Agoda API"
-                }
-              ]
-            },
-            "description": "Mendapatkan detail data hotel real-time dari Agoda API via RapidAPI."
-          },
-          "response": []
-        },
-        {
-          "name": "6.11 Get External Hotel Search (Agoda API)",
-          "request": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "{{BASE_URL}}/api/v1/hotels/external/search-overnight?id=1_318&checkinDate=2026-07-09",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "hotels", "external", "search-overnight"],
-              "query": [
-                {
-                  "key": "id",
-                  "value": "1_318"
-                },
-                {
-                  "key": "checkinDate",
-                  "value": "2026-07-09"
-                }
-              ]
-            },
-            "description": "Mencari properti hotel real-time berdasarkan pencarian lokasi Agoda API."
-          },
-          "response": []
+          ]
         }
-      ]
+      ],
+      "description": "StartFragmentModul ini mengelola data master Hotel beserta sub-dokumen Tipe Kamar (Room Types). Meliputi penambahan properti baru, manajemen fasilitas kamar, hingga unggah foto. Akses modifikasi (POST, PUT, DELETE) dibatasi hanya untuk otorisasi `Admin` dan `HotelManager`.EndFragment"
     },
     {
       "name": "7. Bookings & Transactions",
-      "description": "Modul transaksi pemesanan kamar hotel oleh Customer.",
       "item": [
         {
           "name": "7.1 Create Booking Room",
@@ -1979,8 +4770,14 @@
             },
             "url": {
               "raw": "{{BASE_URL}}/api/v1/bookings",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "bookings"]
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings"
+              ]
             }
           },
           "response": []
@@ -2002,8 +4799,14 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/api/v1/bookings",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "bookings"]
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings"
+              ]
             }
           },
           "response": []
@@ -2025,8 +4828,15 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/api/v1/bookings/:id",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "bookings", ":id"],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                ":id"
+              ],
               "variable": [
                 {
                   "key": "id",
@@ -2055,8 +4865,16 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/api/v1/bookings/:id/cancel",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "bookings", ":id", "cancel"],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                ":id",
+                "cancel"
+              ],
               "variable": [
                 {
                   "key": "id",
@@ -2085,8 +4903,16 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/api/v1/bookings/:id/refund",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "bookings", ":id", "refund"],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                ":id",
+                "refund"
+              ],
               "variable": [
                 {
                   "key": "id",
@@ -2098,11 +4924,11 @@
           },
           "response": []
         }
-      ]
+      ],
+      "description": "Modul transaksi pemesanan kamar hotel oleh Customer."
     },
     {
       "name": "8. Check-In, Check-Out & Ulasan",
-      "description": "Modul tambahan untuk check-in/out tamu dan review ulasan hotel.",
       "item": [
         {
           "name": "8.1 Check-In Guest",
@@ -2121,8 +4947,16 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/api/v1/bookings/:id/checkin",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "bookings", ":id", "checkin"],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                ":id",
+                "checkin"
+              ],
               "variable": [
                 {
                   "key": "id",
@@ -2151,8 +4985,16 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/api/v1/bookings/:id/checkout",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "bookings", ":id", "checkout"],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                ":id",
+                "checkout"
+              ],
               "variable": [
                 {
                   "key": "id",
@@ -2198,8 +5040,16 @@
             },
             "url": {
               "raw": "{{BASE_URL}}/api/v1/bookings/:bookingId/reviews",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "bookings", ":bookingId", "reviews"],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "bookings",
+                ":bookingId",
+                "reviews"
+              ],
               "variable": [
                 {
                   "key": "bookingId",
@@ -2218,8 +5068,16 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/api/v1/hotels/:hotelId/reviews",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "hotels", ":hotelId", "reviews"],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "hotels",
+                ":hotelId",
+                "reviews"
+              ],
               "variable": [
                 {
                   "key": "hotelId",
@@ -2231,11 +5089,11 @@
           },
           "response": []
         }
-      ]
+      ],
+      "description": "Modul tambahan untuk check-in/out tamu dan review ulasan hotel."
     },
     {
       "name": "9. System Health Check",
-      "description": "Melihat status kesehatan server dan koneksi database.",
       "item": [
         {
           "name": "9.1 Get Health Status",
@@ -2244,17 +5102,23 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/api/v1/health",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "health"]
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "health"
+              ]
             }
           },
           "response": []
         }
-      ]
+      ],
+      "description": "Melihat status kesehatan server dan koneksi database."
     },
     {
       "name": "10. Weather Forecast (OpenWeatherMap)",
-      "description": "Modul integrasi dengan OpenWeatherMap API untuk melihat prakiraan cuaca di kota hotel atau pencarian kota umum.",
       "item": [
         {
           "name": "10.1 Get Current Weather by City",
@@ -2263,8 +5127,15 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/api/v1/weather/current?city=Jakarta",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "weather", "current"],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "weather",
+                "current"
+              ],
               "query": [
                 {
                   "key": "city",
@@ -2284,8 +5155,15 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/api/v1/weather/forecast?city=Jakarta",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "weather", "forecast"],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "weather",
+                "forecast"
+              ],
               "query": [
                 {
                   "key": "city",
@@ -2305,8 +5183,16 @@
             "header": [],
             "url": {
               "raw": "{{BASE_URL}}/api/v1/weather/hotels/:hotelId",
-              "host": ["{{BASE_URL}}"],
-              "path": ["api", "v1", "weather", "hotels", ":hotelId"],
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "weather",
+                "hotels",
+                ":hotelId"
+              ],
               "variable": [
                 {
                   "key": "hotelId",
@@ -2319,19 +5205,22 @@
           },
           "response": []
         }
-      ]
+      ],
+      "description": "Modul integrasi dengan OpenWeatherMap API untuk melihat prakiraan cuaca di kota hotel atau pencarian kota umum."
     }
   ],
   "variable": [
     {
       "key": "BASE_URL",
-      "value": "http://localhost:3000",
-      "type": "string"
+      "value": "http://localhost:3000"
     },
     {
       "key": "token_jwt",
-      "value": "",
-      "type": "string"
+      "value": ""
+    },
+    {
+      "key": "supabase_service_role_api_key_0hsq",
+      "secret": true
     }
   ]
 }

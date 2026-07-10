@@ -162,10 +162,12 @@ const seedData = async () => {
       ],
     });
 
-    console.log("✅ Seeding berhasil! Seluruh data dummy pengujian telah dimasukkan ke Database.");
+    console.log(
+      "✅ Seeding berhasil! Seluruh data dummy pengujian telah dimasukkan ke Database.",
+    );
     process.exit();
   } catch (error) {
-    console.error("❌ Seeding gagal:", error);
+    console.error("Seeding gagal:", error);
     process.exit(1);
   }
 };
